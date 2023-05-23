@@ -1,0 +1,6 @@
+@import "@fontsource/montserrat";
+@import "@fontsource/dancing-script";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

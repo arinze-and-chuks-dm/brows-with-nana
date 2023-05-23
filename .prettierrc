@@ -1,0 +1,13 @@
+{
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "options": {
+        "parser": "astro",
+        "trailingComma": "none",
+        "singleQuote": true,
+        "semi": false
+      }
+    }
+  ]
+}
