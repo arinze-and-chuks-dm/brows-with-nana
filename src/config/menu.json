@@ -6,24 +6,24 @@
     },
     {
       "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Pages",
-      "url": "",
+      "url": "/about",
       "hasChildren": true,
       "children": [
         {
-          "name": "Categories",
-          "url": "/categories"
+          "name": "About Me",
+          "url": "/about"
         },
         {
-          "name": "Tags",
-          "url": "/tags"
+          "name": "Read Before Booking",
+          "url": "/read-before-booking"
         },
         {
-          "name": "Privacy Policy",
-          "url": "/privacy-policy"
+          "name": "FAQ",
+          "url": "/frequently-asked-questions"
+        },
+        {
+          "name": "Policy and guidelines",
+          "url": "/policy-and-guidelines"
         }
       ]
     }

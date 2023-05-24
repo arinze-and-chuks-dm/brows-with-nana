@@ -1,6 +1,4 @@
 ---
-import Button from './Button.astro'
-
 export interface Props {
   title: string
   body: string
@@ -9,11 +7,15 @@ export interface Props {
 const { title, body } = Astro.props
 ---
 
-<a
-  class="flex flex-col space-y-5 rounded-lg h-72 px-10 justify-center hover:shadow-lg hover:scale-105 transition-all items-center"
-  href="/"
+<div
+  class="flex flex-col space-y-5 rounded-lg h-72 px-10 justify-center items-center"
 >
-  <h3 class="text-2xl font-primary">{title}</h3>
-  <p class="text-gray-500 font-primary">{body}</p>
-  <Button text="Read More" />
-</a>
+  <h3 class="text-2xl">{title}</h3>
+  <p class="text-gray-500">{body}</p>
+  <a href="#" class="group text-black transition">
+    Read More
+    <span
+      class="block max-w-0 group-hover:max-w-full transition-all h-0.5 bg-black"
+    ></span>
+  </a>
+</div>
