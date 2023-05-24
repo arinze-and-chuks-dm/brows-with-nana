@@ -1,8 +1,29 @@
-import { defineConfig } from 'astro/config';
-
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import config from "./src/config/config.json";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  site: config.site.base_url ? config.site.base_url : "http://chuksgrinage.com",
+  base: config.site.base_path ? config.site.base_path : "/",
+  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  integrations: [
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    mdx(),
+  ],
+  markdown: {
+    remarkPlugins: [],
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    },
+    extendDefaultPlugins: true,
+  },
 });

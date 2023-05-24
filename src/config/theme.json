@@ -2,7 +2,7 @@
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#01AD9F",
+        "primary": "#000",
         "body": "#fff",
         "border": "#D5D5D5",
         "theme_light": "#FAFAFA",
@@ -17,8 +17,12 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Montserrat, sans-serif",
-      "primary_type": "sans-serif"
+      "primary": "Montserrat",
+      "primary_type": "sans-serif",
+      "secondary": "Robotof",
+      "secondary_type": "sans-serif",
+      "tertiary": "Dancing+Script:wght@400;500;600;700",
+      "tertiary_type": "cursive"
     },
     "font_size": {
       "base": "16",
