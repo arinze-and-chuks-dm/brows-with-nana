@@ -4,9 +4,7 @@ description: "Frequently Asked Questions"
 draft: false
 ---
 
-#### MICROBLADING FAQ
-
-- #### #### WHAT IS SEMI-PERMANENT MAKEUP, OR PMU?
+- #### WHAT IS SEMI-PERMANENT MAKEUP, OR PMU?
 
   Semi-permanent makeup/permanent makeup/permanent cosmetics involves the use of sophisticated techniques and hand tools to implant pigment safely into the skin to create a variety of cosmetic effects that lasts over a long period of time depending on the client's skin type and lifestyle. Some examples of PMU include: microblading, microshading, lip blush, or eyeliner work.
 

@@ -1,4 +1,4 @@
 ---
-title: "Contact"
+title: "Contact Us"
 draft: false
 ---

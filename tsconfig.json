@@ -12,8 +12,10 @@
       "@config/*": ["./src/config/*"],
       "@content/*": ["./src/content/*"],
       "@sections/*": ["./src/sections/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@lib/*": ["./src/lib/*"]
-    }
+      "@lib/*": ["./src/lib/*"],
+      "@styles/*": ["./src/styles/*"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

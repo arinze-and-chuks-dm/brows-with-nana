@@ -1,5 +1,5 @@
 ---
-import Header from '@components/Header.astro'
+import Header from '@components/Header'
 import config from '@config/config.json'
 import theme from '@config/theme.json'
 import { plainify } from '@lib/utils/textConverter'
@@ -19,8 +19,14 @@ const pf = theme.fonts.font_family.primary
 const sf = theme.fonts.font_family.secondary
 const tf = theme.fonts.font_family.tertiary
 
-const { title, meta_title, description, image, noindex, canonical } =
-  Astro.props
+const {
+  title,
+  meta_title,
+  description,
+  image,
+  noindex = false,
+  canonical
+} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -124,7 +130,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="grid min-h-screen grid-rows-[auto_1fr_auto] px-10">
-    <Header />
+    <Header pathName={Astro.url.pathname} client:load />
     <main class="space-y-10">
       <slot />
     </main>

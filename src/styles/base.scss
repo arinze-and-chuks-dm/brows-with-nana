@@ -44,3 +44,10 @@ h6,
 .h6 {
   @apply text-h6;
 }
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
