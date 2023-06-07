@@ -1,4 +1,5 @@
 ---
+import Footer from '@components/Footer.astro'
 import Header from '@components/Header'
 import config from '@config/config.json'
 import theme from '@config/theme.json'
@@ -19,14 +20,8 @@ const pf = theme.fonts.font_family.primary
 const sf = theme.fonts.font_family.secondary
 const tf = theme.fonts.font_family.tertiary
 
-const {
-  title,
-  meta_title,
-  description,
-  image,
-  noindex = false,
-  canonical
-} = Astro.props
+const { title, meta_title, description, image, noindex, canonical } =
+  Astro.props
 ---
 
 <!DOCTYPE html>
@@ -134,6 +129,6 @@ const {
     <main class="space-y-10">
       <slot />
     </main>
-    <footer>footer</footer>
+    <Footer />
   </body>
 </html>

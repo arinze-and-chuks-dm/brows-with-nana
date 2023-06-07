@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Brows with Nana | Tech Blog",
-    "base_url": "https://chuksgrinage.com",
+    "base_url": "https://browswithnana.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.svg",
