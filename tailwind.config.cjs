@@ -57,8 +57,6 @@ module.exports = {
         secondary: theme.colors.default.theme_color.secondary,
         body: theme.colors.default.theme_color.body,
         border: theme.colors.default.theme_color.border,
-        "theme-light": theme.colors.default.theme_color.theme_light,
-        "theme-dark": theme.colors.default.theme_color.theme_dark,
       },
       fontSize: {
         base: font_base + "px",
@@ -85,5 +83,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwindcss-animated"),
+  ],
 };

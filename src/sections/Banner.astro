@@ -1,14 +1,22 @@
 ---
-import Button from '@components/Button.astro'
+import Button from '@components/Button.astro';
 ---
 
-<section
-  class="h-[70vh] bg-black text-white flex justify-center flex-col space-y-10 lg:px-20"
->
-  <h2 class="text-7xl">Beauty Slogan</h2>
-  <p class="font-secondary italic font-extralight text-2xl w-1/2">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
-    repellat ad possimus delectus hic quasi nesciunt.
-  </p>
-  <Button text="Book Appointment" />
+<section class="h-[80vh] flex flex-row">
+  <div
+    class="flex justify-center flex-col space-y-10 lg:px-20 animate-fade-right"
+  >
+    <h2 class="text-9xl tracking-tight">Beauty Slogan</h2>
+    <p class="font-secondary italic font-extralight text-3xl w-2/3">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+      repellat ad possimus delectus hic quasi nesciunt.
+    </p>
+    <Button text="Book Appointment" />
+  </div>
+  <!-- <img
+    class="animate-fade-left"
+    src="/images/eye_brow_01.png"
+    alt="hero"
+    class="w-1/2"
+  /> -->
 </section>

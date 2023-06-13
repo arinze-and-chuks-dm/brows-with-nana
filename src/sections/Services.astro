@@ -1,34 +1,33 @@
 ---
-import Card from '@components/Card.astro'
+import Card from '@components/Card.astro';
 const services = [
   {
     title: 'SERVICE 1',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
 
   {
     title: 'SERVICE 2',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
 
   {
     title: 'SERVICE 3',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
-  }
-] as const
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  },
+] as const;
 ---
 
 <section
   class="section h-[50vh] flex justify-center text-center flex-col space-y-10 px-20"
 >
-  <h2 class="text-3xl">SERVICES</h2>
   <ul class="flex space-x-4">
     {
       services.map((service) => {
-        return <Card body={service.description} title={service.title} />
+        return <Card body={service.description} title={service.title} />;
       })
     }
   </ul>

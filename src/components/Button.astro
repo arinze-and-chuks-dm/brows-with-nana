@@ -1,12 +1,14 @@
 ---
 export type Props = {
-  text: string
-  class?: string
-}
+  text: string;
+  class?: string;
+};
 
-const { text, class: className } = Astro.props
+const { text, class: className } = Astro.props;
 ---
 
-<button class={`w-fit border cursor-pointer bg-black p-2 ${className}`}>
+<button
+  class={`w-fit border border-black rounded-full cursor-pointer p-2 ${className}`}
+>
   {text}
 </button>

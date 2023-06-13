@@ -1,27 +1,27 @@
 ---
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header'
-import config from '@config/config.json'
-import theme from '@config/theme.json'
-import { plainify } from '@lib/utils/textConverter'
-import '@styles/style.scss'
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header';
+import config from '@config/config.json';
+import theme from '@config/theme.json';
+import { plainify } from '@lib/utils/textConverter';
+import '@styles/style.scss';
 
 export type Props = {
-  title?: string
-  meta_title?: string
-  description?: string
-  image?: string
-  noindex?: boolean
-  canonical?: string
-}
+  title?: string;
+  meta_title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+};
 
 // font families
-const pf = theme.fonts.font_family.primary
-const sf = theme.fonts.font_family.secondary
-const tf = theme.fonts.font_family.tertiary
+const pf = theme.fonts.font_family.primary;
+const sf = theme.fonts.font_family.secondary;
+const tf = theme.fonts.font_family.tertiary;
 
 const { title, meta_title, description, image, noindex, canonical } =
-  Astro.props
+  Astro.props;
 ---
 
 <!DOCTYPE html>
