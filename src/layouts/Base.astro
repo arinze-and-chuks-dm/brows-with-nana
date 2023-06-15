@@ -124,7 +124,8 @@ const { title, meta_title, description, image, noindex, canonical } =
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] px-10">
+  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] relative">
+    <!-- [&>*]:px-60  -->
     <Header pathName={Astro.url.pathname} client:load />
     <main class="space-y-10">
       <slot />

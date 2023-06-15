@@ -76,10 +76,7 @@ module.exports = {
         logo: [fontTertiary, fontTertiaryType],
       },
       height: {
-        // TODO: remove this when tailwindcss 4.0 releases with string[] support
-        screen: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"].join(
-          ", "
-        ),
+        screen: ["100vh", "100dvh"],
       },
     },
   },

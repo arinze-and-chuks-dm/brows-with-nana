@@ -1,6 +1,6 @@
 // section style
 .section {
-  @apply py-20;
+  @apply px-60;
 }
 
 // container
@@ -89,6 +89,6 @@
 }
 
 // footer
-footer p a {
-  @apply transition-all duration-200 hover:text-white;
-}
+// footer p a {
+//   @apply transition-all duration-200 hover:text-white;
+// }

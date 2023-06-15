@@ -2,9 +2,9 @@
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#cbd5be",
-        "body": "#f3eae2",
-        "border": "#D5D5D5"
+        "primary": "#fff",
+        "body": "#fff",
+        "border": "#000"
       },
       "text_color": {
         "default": "#19110a",
@@ -15,9 +15,9 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Montserrat",
+      "primary": "Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900",
       "primary_type": "sans-serif",
-      "secondary": "Robotof",
+      "secondary": "Roboto",
       "secondary_type": "sans-serif",
       "tertiary": "Dancing+Script:wght@400;500;600;700",
       "tertiary_type": "cursive"

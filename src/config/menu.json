@@ -35,15 +35,5 @@
         }
       ]
     }
-  ],
-  "footer": [
-    {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Privacy Policy",
-      "url": "/privacy-policy"
-    }
   ]
 }

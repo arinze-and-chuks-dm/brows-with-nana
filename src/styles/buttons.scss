@@ -1,11 +1,19 @@
+// .btn {
+//   @apply inline-block rounded-lg border px-6 py-3 font-semibold transition;
+// }
+
+// .btn-primary {
+//   @apply bg-primary text-white;
+// }
+
+// .btn-outline-primary {
+//   @apply border-primary bg-transparent hover:bg-primary hover:text-white;
+// }
+
 .btn {
-  @apply inline-block rounded-lg border px-6 py-3 font-semibold transition;
+  @apply w-fit border text-center rounded-xl border-black cursor-pointer px-16 py-3;
 }
 
-.btn-primary {
-  @apply bg-primary text-white;
-}
-
-.btn-outline-primary {
-  @apply border-primary bg-transparent hover:bg-primary hover:text-white;
+.btn-dark {
+  @apply btn bg-[#8F7883] text-white py-2;
 }
