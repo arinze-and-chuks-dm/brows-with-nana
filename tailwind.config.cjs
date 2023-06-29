@@ -49,6 +49,13 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      content: {
+        "leaf-up": "url('/images/leaf-up.svg')",
+        "leaf-down": "url('/images/leaf-down.svg')",
+        "location-pin-dark": "url('/images/location-pin-dark.svg')",
+        phone: "url('/images/phone.svg')",
+        email: "url('/images/email.svg')",
+      },
       colors: {
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,

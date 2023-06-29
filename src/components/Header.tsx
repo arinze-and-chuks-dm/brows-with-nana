@@ -50,8 +50,15 @@ export default function Header({ pathName }: { pathName: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div>
-      <header className="absolute leading-5 inset-x-0 top-0 z-50 section text-[#8E7982]">
+    <div className="inset-x-0">
+      <div className=" bg-[#8F7883] h-12 text-xl section text-white flex justify-between items-center">
+        <div className="flex justify-center space-x-1">
+          <img src="/images/location-pin.svg" />
+          <span>Frisco, TX</span>
+        </div>
+        <div>Location+Number</div>
+      </div>
+      <header className="leading-5  top-0 z-50 section text-[#8E7982]">
         <nav
           className="flex items-center justify-between relative isolate"
           aria-label="Global"

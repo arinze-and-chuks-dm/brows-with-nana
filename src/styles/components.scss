@@ -1,6 +1,10 @@
 // section style
 .section {
-  @apply sm:px-5 md:px-32 xl:px-60;
+  @apply sm:px-5 md:px-32 xl:px-60 py-28;
+}
+
+.section-colored {
+  @apply section bg-[#F5EBEA];
 }
 
 // container
@@ -92,3 +96,7 @@
 // footer p a {
 //   @apply transition-all duration-200 hover:text-white;
 // }
+
+.leaf-image-container {
+  @apply relative before:content-leaf-down before:absolute before:-start-20 before:-z-10 after:content-leaf-up after:absolute after:bottom-0 after:end-5 after:-z-10;
+}
