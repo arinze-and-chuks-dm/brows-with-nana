@@ -1,0 +1,47 @@
+---
+const instagramFeed = [
+    {
+        image: 'images/testimonial-1.png',
+        link: 'https://www.instagram.com/hoshi.studio.nana/',
+    },
+    {
+        image: 'images/testimonial-1.png',
+        link: 'https://www.instagram.com/hoshi.studio.nana/',
+    },
+    {
+        image: 'images/testimonial-1.png',
+        link: 'https://www.instagram.com/hoshi.studio.nana/',
+    },
+
+    {
+        image: 'images/testimonial-1.png',
+        link: 'https://www.instagram.com/hoshi.studio.nana/',
+    },
+];
+---
+
+<section class="section space-y-10 flex align-middle justify-center flex-col">
+    <a
+        class="hover:underline underline-offset-8"
+        target="_blank"
+        href="https://www.instagram.com/hoshi.studio.nana/"
+    >
+        <h3 class="text-center text-6xl hover:underline text-[#423139]">
+            #browswithnana
+        </h3>
+    </a>
+    <ul class="flex space-x-5">
+        {
+            instagramFeed.map((feed) => (
+                <li>
+                    <a target="_blank" href={feed.link}>
+                        <img
+                            src={feed.image}
+                            class="object-cover w-full min-h-72"
+                        />
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</section>

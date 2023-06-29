@@ -4,6 +4,7 @@
 // import { markdownify } from '@lib/utils/textConverter'
 import config from '@config/config.json';
 import menu from '@config/menu.json';
+import GetStartWithUs from '@sections/GetStartWithUs.astro';
 const {
   params: { copyright } = {},
   contactinfo: { phone, address, email } = {},
@@ -11,6 +12,7 @@ const {
 const { main } = menu;
 ---
 
+<GetStartWithUs />
 <footer aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-7xl pb-8 pt-16 sm:pt-24 lg:pt-32">

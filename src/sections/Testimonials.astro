@@ -1,22 +1,56 @@
 ---
+const testimonials = [
+  // TODO: change images to jpg
+  {
+    name: 'Wendy Heath',
+    image: {
+      src: 'images/testimonial-1.png',
+      alt: 'Wendy Heath',
+    },
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+  },
+  {
+    name: 'Wendy Heath',
+    image: {
+      src: 'images/testimonial-2.png',
+      alt: 'Wendy Heath',
+    },
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+  },
+  {
+    name: 'Wendy Heath',
+    image: {
+      src: 'images/testimonial-3.png',
+      alt: 'Wendy Heath',
+    },
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+  },
+];
 ---
 
-<section class="section-colored space-y-10 flex align-middle flex-col">
+<section class="section-colored space-y-10 flex items-center flex-col">
   <h3 class="text-center text-6xl text-[#423139]">Hear from Our Clients</h3>
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-    <li
-      class="col-span-1 flex flex-col divide-y divide-gray-200 bg-white text-center shadow"
-    >
-      <div class="flex flex-1 flex-col p-8 bg-[#F5EBEA]">Hello</div>
+    {
+      testimonials.map(({ image, text, name }) => (
+        <li class="col-span-1 flex flex-col bg-white text-center shadow">
+          <div class="flex flex-1 flex-col bg-[#F5EBEA]">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-80 object-fill"
+            />
+          </div>
 
-      <!-- Below -->
-      <div>
-        <div class="p-10 text-center space-y-5">
-          <h4 class="font-medium">Wendy Lannon</h4>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-    </li>
+          <div>
+            <div class=" p-9 text-center space-y-5">
+              <h4 class="text-[#423139] text-2xl font-bold">{name}</h4>
+              <p class="text-[#8F7880]">{text}</p>
+            </div>
+          </div>
+        </li>
+      ))
+    }
   </ul>
   <button type="button" class="btn-dark border-0">Book Now</button>
 </section>
