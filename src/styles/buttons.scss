@@ -11,9 +11,9 @@
 // }
 
 .btn {
-  @apply w-fit border text-center rounded-xl border-dark cursor-pointer px-16 py-4;
+  @apply w-full md:w-fit border text-center rounded-xl border-dark cursor-pointer px-5 md:px-16 py-4;
 }
 
 .btn-dark {
-  @apply btn bg-[#8F7883] text-white;
+  @apply btn bg-dark text-white;
 }

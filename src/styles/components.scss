@@ -1,9 +1,13 @@
 .section-padding-x {
-  @apply px-2 sm:px-5 md:px-32 xl:px-60;
+  @apply px-2 sm:px-5 md:px-10 xl:px-60;
+}
+
+.section-padding-y {
+  @apply md:py-28;
 }
 // section style
 .section {
-  @apply section-padding-x py-28;
+  @apply section-padding-x section-padding-y;
 }
 
 .section-colored {

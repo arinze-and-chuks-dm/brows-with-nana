@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Brows with Nana | Tech Blog",
+    "title": "Brows with Nana",
     "base_url": "https://browswithnana.com",
     "base_path": "/",
     "trailing_slash": false,

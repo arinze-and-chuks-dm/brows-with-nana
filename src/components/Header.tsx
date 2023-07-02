@@ -1,9 +1,10 @@
+import logo from "@assets/icons/brows-with-nana-logo.svg";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { markdownify } from "@lib/utils/textConverter";
 import { useState } from "react";
+const { city, address, phone } = config.contactinfo;
 
 export type NavLink = {
   name: string;
@@ -12,9 +13,6 @@ export type NavLink = {
 };
 
 const {
-  logo,
-  logo_width,
-  logo_height,
   logo_text,
   title,
 }: {
@@ -24,21 +22,15 @@ const {
   logo_text: string;
   title: string;
 } = config.site;
-const { address } = config.contactinfo;
 const { main }: { main: Array<NavLink> } = menu;
 
 const browsWithNanaLogo = (
   <a href="/" className="font-logo text-black text-3xl">
     {logo ? (
       <img
-        width={150}
-        height={150}
-        src={logo}
+        src={logo.src}
         alt={title}
-        // style={{
-        //   height: logo_height.replace("px", "") + "px",
-        //   width: logo_width.replace("px", "") + "px",
-        // }}
+        className=" aspect-square object-contain w-24 md:w-28 lg:w-40"
       />
     ) : logo_text ? (
       logo_text
@@ -50,17 +42,36 @@ const browsWithNanaLogo = (
 
 export default function Header({ pathName }: { pathName: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [storeInfoMenuOpen, setSetstoreInfoMenuOpen] = useState(false);
 
   return (
     <div className="inset-x-0">
-      <div className=" bg-[#8F7883] h-12 text-xl text-white flex justify-between items-center">
-        <div className="flex justify-center space-x-1">
-          <img src="/images/location-pin.svg" />
-          <span set:html={markdownify(address)} />
+      {/* <div className="relative z-50 shadow">
+        <div className="bg-dark text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x">
+          <div className="flex justify-center space-x-1">
+            <img src={locationPinIcon.src} />
+            <span>{markdownify(city)}</span>
+          </div>
+          <button className="flex items-center space-x-1">
+            <span> Location + Number</span>
+            <img src={chevronDownIcon.src} />
+          </button>
         </div>
-        <div>Location+Number</div>
-      </div>
-      <header className="leading-5  top-0 z-50 section text-[#8E7982]">
+
+        <div className="absolute inset-x-0 top-0 text-dark -z-10 bg-primary pt-16 shadow-lg ring-1 ring-gray-900/5 flex flex-col px-5 md:flex-row md:items-center md:justify-around">
+          <p dangerouslySetInnerHTML={{ __html: markdownify(config.hours) }} />
+
+          <div className="max-w-7xl py-10 space-y-5">
+            <p dangerouslySetInnerHTML={{ __html: markdownify(address) }} />
+            <button className="btn" type="button">
+              CALL{" "}
+              <span dangerouslySetInnerHTML={{ __html: markdownify(phone) }} />
+            </button>
+          </div>
+        </div>
+      </div> */}
+
+      <header className="leading-5 inset-x-0  top-0 z-50 section-padding-x absolute py-5">
         <nav
           className="flex items-center justify-between relative isolate"
           aria-label="Global"
@@ -81,7 +92,7 @@ export default function Header({ pathName }: { pathName: string }) {
               <a
                 key={item.name}
                 href={item.url}
-                className=" leading-6 hover:text-[#83B197]"
+                className=" leading-6 hover:text-secondary"
               >
                 {item.name}
               </a>

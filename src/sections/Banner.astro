@@ -1,24 +1,25 @@
 ---
+import heroGirl from '@assets/images/hero-girl.png'
+import { Image } from 'astro:assets'
 ---
 
-<section class="min-full section banner-bg">
-  <div class="h-full mx-auto max-w-7xl lg:grid lg:grid-cols-12">
-    <div
-      class="space-y-10 animate-fade-right self-center lg:col-span-7 xl:col-span-5"
-    >
-      <h2>Stand Out with Beautiful Brows!</h2>
-      <p
-        class="text-[#8F7880] font-secondary italic font-extralight text-lg w-2/3"
-      >
+<section class="h-screen pt-28 p-5 md:pt-44 banner-bg">
+  <div
+    class="h-full mx-auto max-w-7xl grid grid-cols-1 md:gap-y-5 lg:grid-cols-12 pt-5"
+  >
+    <div class="space-y-5 animate-fade-right self-center lg:col-span-4">
+      <h2 class="">Stand Out with Beautiful Brows!</h2>
+      <p class="font-secondary italic font-extralight text-lg md:w-2/3">
         Enhance Your Beauty, Frame Your Confidence: Flawless Brows by Experts
       </p>
-      <button class="btn text-[#423139]" type="button"
+      <button class="btn text-dark" type="button"
         >Schedule an Appointment</button
       >
     </div>
-    <div class="col-span-7 max-h-full self-end">
-      <img class="max-w-full h-[800px]" src="/images/hero-girl.png" />
-    </div>
+    <!-- <div class="lg:col-span-5 max-h-full self-end"> -->
+      <!-- <Image class="max-w-full h-[800px]" src={heroGirl} alt="" /> -->
+      <Image class="object-contain col-span-8 self-end" src={heroGirl} alt="" />
+    <!-- </div> -->
   </div>
 </section>
 
