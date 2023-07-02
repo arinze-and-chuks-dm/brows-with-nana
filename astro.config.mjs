@@ -1,4 +1,3 @@
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -10,6 +9,9 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ?? "https://browswithnana.com",
+  experimental: {
+    assets: true,
+  },
   base: config.site.base_path ?? "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   integrations: [
@@ -19,9 +21,9 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
+    // image({
+    //   serviceEntryPoint: "@astrojs/image/sharp",
+    // }),
     mdx(),
     react(),
   ],

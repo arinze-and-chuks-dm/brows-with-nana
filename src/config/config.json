@@ -4,31 +4,26 @@
     "base_url": "https://browswithnana.com",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.svg",
+    "favicon": "/favicon.svg",
     "logo": "/images/brows-with-nana-logo.png",
-    "logo_width": "200",
-    "logo_height": "100",
+    "logo_width": "150",
+    "logo_height": "150",
     "logo_text": "Brows with Nana"
   },
-
-  "settings": {
-    "pagination": 5,
-    "summary_length": 100
-  },
-
   "metadata": {
-    "meta_author": "Chuks Grinage",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Blog about tech, software development, and other things I find interesting."
+    "meta_author": "Nancy Lin",
+    "meta_image": "/images/brows-with-nana-logo.png",
+    "meta_description": "meta description"
   },
 
   "params": {
     "contact_form_action": "#",
     "copyright": "© 2023 Brows with Nana. All rights reserved."
   },
-
+  "hours": "Monday - Friday: 8:30am - 7pm <br /> Saturday: 9am - 5pm <br/> Sunday: Closed",
   "contactinfo": {
     "address": "355 S Grand Ave <br/> Los Angeles, CA 90071",
+    "city": "Plano, TX",
     "email": "info@bookworm.org",
     "phone": "+800 567 1234"
   }

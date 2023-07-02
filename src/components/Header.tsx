@@ -2,6 +2,7 @@ import config from "@config/config.json";
 import menu from "@config/menu.json";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { markdownify } from "@lib/utils/textConverter";
 import { useState } from "react";
 
 export type NavLink = {
@@ -23,6 +24,7 @@ const {
   logo_text: string;
   title: string;
 } = config.site;
+const { address } = config.contactinfo;
 const { main }: { main: Array<NavLink> } = menu;
 
 const browsWithNanaLogo = (
@@ -51,10 +53,10 @@ export default function Header({ pathName }: { pathName: string }) {
 
   return (
     <div className="inset-x-0">
-      <div className=" bg-[#8F7883] h-12 text-xl section text-white flex justify-between items-center">
+      <div className=" bg-[#8F7883] h-12 text-xl text-white flex justify-between items-center">
         <div className="flex justify-center space-x-1">
           <img src="/images/location-pin.svg" />
-          <span>Frisco, TX</span>
+          <span set:html={markdownify(address)} />
         </div>
         <div>Location+Number</div>
       </div>
@@ -117,7 +119,7 @@ export default function Header({ pathName }: { pathName: string }) {
                     <a
                       key={item.name}
                       href={item.url}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7  hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 leading-7  hover:bg-gray-50"
                     >
                       {item.name}
                     </a>

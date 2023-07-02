@@ -13,7 +13,8 @@
       "@content/*": ["./src/content/*"],
       "@sections/*": ["./src/sections/*"],
       "@lib/*": ["./src/lib/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

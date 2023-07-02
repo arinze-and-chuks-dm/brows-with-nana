@@ -1,0 +1,41 @@
+---
+import chevronDownIcon from '@assets/icons/chevron-down.svg';
+import locationPinIcon from '@assets/icons/location-pin.svg';
+import config from '@config/config.json';
+import { markdownify } from '@lib/utils/textConverter';
+const { city, address, phone } = config.contactinfo;
+---
+
+<header>
+    <div class="relative z-50 shadow">
+        <div
+            class="bg-dark text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x"
+        >
+            <div class="flex justify-center space-x-1">
+                <img src={locationPinIcon.src} />
+                <span set:html={markdownify(city)} />
+            </div>
+            <button class="flex items-center space-x-1">
+                <span> Location + Number</span>
+                <img src={chevronDownIcon.src} />
+            </button>
+        </div>
+
+        <div
+            class="absolute inset-x-0 top-0 text-dark -z-10 bg-primary pt-16 shadow-lg ring-1 ring-gray-900/5 flex flex-col px-5"
+        >
+            <p set:html={markdownify(config.hours)} />
+            <div class="flex flex-1 max-w-7xl py-10">
+                <div class="space-y-5">
+                    <p set:html={markdownify(address)} />
+                    <button class="btn" type="button">
+                        CALL <span set:html={markdownify(phone)} />
+                    </button>
+                </div>
+                <!-- <div
+                    class="inline-block h-[250px] min-h-[1em] w-0.5 bg-dark self-stretch opacity-100 dark:opacity-50"
+                > -->
+            </div>
+        </div>
+    </div>
+</header>

@@ -2,14 +2,14 @@
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#fff",
+        "primary": "#F5EBEA",
         "body": "#fff",
         "border": "#423139"
       },
       "text_color": {
-        "default": "#19110a",
-        "dark": "#152035",
-        "light": "#a1a5ae"
+        "default": "#8F7880",
+        "dark": "#423139",
+        "light": "#fff"
       }
     }
   },
@@ -21,10 +21,6 @@
       "secondary_type": "sans-serif",
       "tertiary": "Dancing+Script:wght@400;500;600;700",
       "tertiary_type": "cursive"
-    },
-    "font_size": {
-      "base": "16",
-      "scale": "1.250"
     }
   }
 }
