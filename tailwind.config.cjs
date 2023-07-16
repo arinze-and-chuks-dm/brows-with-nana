@@ -30,11 +30,16 @@ module.exports = {
   theme: {
     extend: {
       content: {
-        "leaf-up": "url('/images/leaf-up.svg')",
-        "leaf-down": "url('/images/leaf-down.svg')",
-        "location-pin-dark": "url('/images/location-pin-dark.svg')",
-        phone: "url('/images/phone.svg')",
-        email: "url('/images/email.svg')",
+        "leaf-up": "url('./src/assets/icons/leaf-up.svg')",
+        "leaf-down": "url('./src/assets/icons/leaf-down.svg')",
+        "location-pin-dark": "url('./src/assets/icons/location-pin-dark.svg')",
+        phone: "url('/src/assets/icons/phone.svg')",
+        email: "url('/src/assets/icons/email.svg')",
+      },
+      listStyleImage: {
+        "location-pin-dark": "url('./src/assets/icons/location-pin-dark.svg')",
+        phone: "url('/src/assets/icons/phone.svg')",
+        email: "url('/src/assets/icons/email.svg')",
       },
       colors: {
         text: theme.colors.default.text_color.default,

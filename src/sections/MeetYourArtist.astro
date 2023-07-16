@@ -1,23 +1,24 @@
 ---
+import meetYourArtist from '@assets/images/meet-your-artist.jpg'
+import { Image } from "astro:assets"
 ---
 
-<!-- object-fit -->
-<section class="section grid grid-cols-2 gap-20">
-  <div class="leaf-image-container">
-    <img
-      src="images/meet-your-artist.jpg"
+<section class="section grid lg:grid-cols-2  gap-20">
+  <div class="leaf-image-container grid-rows-2">
+    <Image
+      src={meetYourArtist}
       alt="Artist Nancy Lin microblading a female client"
     />
   </div>
-  <div class="space-y-5 self-center">
-    <h3 class="text-[#423139] text-6xl">Meet your artist</h3>
-    <p class="text-[#8F7880]">
+  <div class="space-y-5 self-center grid-rows-1">
+    <h3 class="text-6xl">Meet your artist</h3>
+    <p >
       Welcome to Brows with Nana, and thank you for stopping by! My name is
       Nancy, but my friends call me Nana for short. I am the artist/owner behind
       Brows with Nana, located in the heart of Plano, TX (later relocated to
       HOSHI STUDIO in Frisco, TX).
     </p>
-    <p class="text-[#8F7880]">
+    <p >
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt soluta,
       iste, ipsum nulla minus alias iure facere eos eligendi itaque cupiditate
       quod optio velit esse, ea sed corporis atque eaque?

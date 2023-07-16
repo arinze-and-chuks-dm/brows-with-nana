@@ -1,10 +1,10 @@
-import logo from "@assets/icons/brows-with-nana-logo.svg";
-import config from "@config/config.json";
-import menu from "@config/menu.json";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
-const { city, address, phone } = config.contactinfo;
+import logo from "@assets/icons/brows-with-nana-logo.svg"
+import config from "@config/config.json"
+import menu from "@config/menu.json"
+import { Dialog } from "@headlessui/react"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import { useState } from "react"
+const { city, address, phone } = config.contactInfo;
 
 export type NavLink = {
   name: string;

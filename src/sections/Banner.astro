@@ -3,7 +3,7 @@ import heroGirl from '@assets/images/hero-girl.png'
 import { Image } from 'astro:assets'
 ---
 
-<section class="h-screen pt-28 p-5 md:pt-44 banner-bg">
+<section class="h-screen pt-28 section-padding-x md:pt-44 banner-bg">
   <div
     class="h-full mx-auto max-w-7xl grid grid-cols-1 md:gap-y-5 lg:grid-cols-12 pt-5"
   >
@@ -16,10 +16,7 @@ import { Image } from 'astro:assets'
         >Schedule an Appointment</button
       >
     </div>
-    <!-- <div class="lg:col-span-5 max-h-full self-end"> -->
-      <!-- <Image class="max-w-full h-[800px]" src={heroGirl} alt="" /> -->
-      <Image class="object-contain col-span-8 self-end" src={heroGirl} alt="" />
-    <!-- </div> -->
+      <Image class="object-full col-span-8 self-end " src={heroGirl} alt="" />
   </div>
 </section>
 
