@@ -15,12 +15,6 @@ export type NavLink = {
 const {
   logo_text,
   title,
-}: {
-  logo: string;
-  logo_width: any;
-  logo_height: any;
-  logo_text: string;
-  title: string;
 } = config.site;
 const { main }: { main: Array<NavLink> } = menu;
 
