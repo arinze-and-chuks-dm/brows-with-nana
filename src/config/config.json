@@ -5,7 +5,7 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/favicon.svg",
-    "logo": "/images/brows-with-nana-logo.png",
+    "logo": "../assets/icons/brows-with-nana-logo.png",
     "logo_width": "150",
     "logo_height": "150",
     "logo_text": "Brows with Nana"
