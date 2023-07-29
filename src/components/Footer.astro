@@ -3,22 +3,31 @@
 // import config from '@config/config.json'
 // import { markdownify } from '@lib/utils/textConverter'
 // TODO: UPDATE logo to svg
+import email from '@assets/icons/email.svg'
 import facebook from '@assets/icons/facebook.svg'
 import instagram from '@assets/icons/instagram.svg'
+import locationIcon from '@assets/icons/location-pin-dark.svg'
+import phone from '@assets/icons/phone.svg'
 import tiktok from '@assets/icons/tiktok.svg'
 import twitter from '@assets/icons/twitter.svg'
 import youtube from '@assets/icons/youtube.svg'
 import logo from '@assets/images/brows-with-nana-logo.png'
 import config from '@config/config.json'
 import menu from '@config/menu.json'
+import { markdownify } from '@lib/utils/textConverter'
 import GetStartWithUs from '@sections/GetStartWithUs.astro'
 const {
   params: { copyright } = {},
-  contactInfo: { phone, address, email } = {},
+  contactInfo,
   site: { logo_text} = {}
 } = config;
 
 const { main } = menu;
+const data =  [
+    {text: contactInfo.address, icon: locationIcon},
+    {text: contactInfo.phone, icon: email},
+    {text: contactInfo.email, icon: phone},
+]
 ---
 
 <GetStartWithUs />
@@ -50,9 +59,15 @@ const { main } = menu;
         <h3 class="text-sm font-semibold leading-6">Contact Us</h3>
         <div>
 
-        {address}
-        {phone}
-        {email} 
+          <ul class="space-y-5">
+            {data.map(item => (
+                <li class="flex space-x-2">
+                    <img class="self-start"   src={item.icon.src} alt="location icon" />
+                    <span set:html={markdownify(item.text)} />
+                </li>
+
+            ))}
+        </ul>
         </div>
       </div>
       <div class="col-span-1 space-y-5">
@@ -64,41 +79,6 @@ const { main } = menu;
               est sapiente eaque?
             </p>
       </div>
-      <!-- <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold leading-6">Links</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              {
-                main.map((item) => (
-                  <li>
-                    <a href="#" class="text-sm leading-6">
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="mt-10 md:mt-0">
-            <h3 class="text-sm font-semibold leading-6">Contact Us</h3>
-            {address}
-            {phone}
-            {email}
-          </div>
-        </div>
-        <div class="md:grid">
-          <div>
-            <h3 class="text-sm font-semibold leading-6">About Us</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic velit
-              corporis vitae rerum doloribus aliquid ex id tenetur consequuntur,
-              ratione, perferendis fugiat quos, iusto natus voluptate inventore
-              est sapiente eaque?
-            </p>
-          </div>
-        </div>
-      </div> -->
 
       <div class="col-span-1 space-y-5">
   <h3 class="text-sm font-semibold leading-6">Follow Us</h3>
