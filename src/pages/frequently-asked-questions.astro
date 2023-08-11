@@ -2,12 +2,19 @@
 import Base from '@layouts/Base.astro'
 import { getEntryBySlug } from 'astro:content'
 const entry = await getEntryBySlug('pages', 'frequently-asked-questions');
-const { title, image, faq } = entry.data;
+const { title, image, faq, description } = entry.data;
 const { Content } = await entry.render();
+import { Image } from 'astro:assets'
+import { markdownify } from '@lib/utils/textConverter'
 ---
 
 <Base title={title} image={image?.src} >
-  <section class="section">
+  {image ? (
+    <Image src={image.src} alt={image.alt} />
+) : null}
+  <main class="section">
+    <h1 set:html={markdownify(title)} class="h2 page-heading" />
+    {description ? <p class="text-center mb-20" set:html={markdownify(description)} /> : null}
     <Content />
     <div class="p-24 bg-primary rounded-lg space-y-5">
         {faq?.map(({ question, answer }, index) => (
@@ -37,7 +44,7 @@ const { Content } = await entry.render();
               </dl>
       ))}
       </div>
-  </section>
+    </main>
 </Base>
 
 <script>
