@@ -20,7 +20,7 @@ import { markdownify } from '@lib/utils/textConverter'
         {faq?.map(({ question, answer }, index) => (
               <dl id="faq" class="bg-white rounded-lg space-y-6 divide-y p-3">
                 <div>
-                  <dt >
+                  <dt>
                     <button id={`btn-${index}`} data-faq={index} type="button" class="flex w-full items-start text-left text-black space-x-3 " aria-controls={`answer-${index}`} aria-expanded="false">
                       <span class="flex h-7 items-center">
                         <svg id={`close-${index}`} class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -30,7 +30,7 @@ import { markdownify } from '@lib/utils/textConverter'
                           <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
                         </svg>
                       </span>
-                      <span class="text-base font-semibold leading-7">{question}</span>
+                      <span class="text-base leading-7">{question}</span>
                     </button>
                   </dt>
                   <dd class="mt-2 pl-10 hidden space-y-5" id={`answer-${index}`}>
