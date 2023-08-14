@@ -1,4 +1,5 @@
 ---
+const { pathname } = Astro.url
 const instagramFeed = [
     {
         image: 'images/testimonial-1.png',
@@ -18,19 +19,20 @@ const instagramFeed = [
         link: 'https://www.instagram.com/hoshi.studio.nana/',
     },
 ];
+
 ---
 
-<section class="section space-y-10 flex align-middle justify-center flex-col">
+<section class:list={["section space-y-10 flex align-middle justify-center flex-col", { 'bg-primary': pathname === '/contact-us' }]}>
     <a
         class="hover:underline underline-offset-8"
         target="_blank"
         href="https://www.instagram.com/hoshi.studio.nana/"
     >
-        <h3 class="text-center text-6xl hover:underline text-[#423139]">
+        <h3 class="text-center text-6xl hover:underline text-dark ">
             #browswithnana
         </h3>
     </a>
-    <ul class="flex space-x-5">
+    <ul class="flex space-x-5 justify-center">
         {
             instagramFeed.map((feed) => (
                 <li>

@@ -10,7 +10,7 @@ const { Content } = await data.render();
         {image ? (
             <Image src={image.src} alt={image.alt} />
         ) : null}
-<main class="section">
+<div class="section">
 
     <h1 set:html={markdownify(title)} class="h2 page-heading" />
     <p class="text-center mb-20" set:html={markdownify(description)} />
@@ -20,4 +20,4 @@ const { Content } = await data.render();
 
 
     </div>
-  </main>
+  </div>

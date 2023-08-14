@@ -1,11 +1,13 @@
 ---
 import heroGirl from '@assets/images/hero-girl.png'
+import Header from '@components/Header'
 import { Image } from 'astro:assets'
 ---
 
-<section class="h-screen pt-28 section-padding-x md:pt-44 banner-bg">
+<div class="banner-bg">
+  <Header pathName={Astro.url.pathname} client:load />
   <div
-    class="h-full mx-auto max-w-7xl grid grid-cols-1 md:gap-y-5 lg:grid-cols-12 pt-5"
+    class="mx-auto max-w-7xl grid grid-cols-1 md:gap-y-5 lg:grid-cols-12"
   >
     <div class="space-y-5 animate-fade-right self-center lg:col-span-4">
       <h2 class="">Stand Out with Beautiful Brows!</h2>
@@ -16,9 +18,9 @@ import { Image } from 'astro:assets'
         >Schedule an Appointment</button
       >
     </div>
-      <Image class="object-full col-span-8 self-end " src={heroGirl} alt="" />
+      <Image class="object-contain col-span-8" src={heroGirl} alt="" />
   </div>
-</section>
+</div>
 
 <style>
   .banner-bg {

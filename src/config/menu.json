@@ -5,8 +5,16 @@
       "url": "/"
     },
     {
-      "name": "Contact",
-      "url": "/contact"
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "FAQs",
+      "url": "/frequently-asked-questions"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact-us"
     },
     {
       "name": "Blog",

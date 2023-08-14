@@ -6,9 +6,12 @@ const { title, image, faq, description } = entry.data;
 const { Content } = await entry.render();
 import { Image } from 'astro:assets'
 import { markdownify } from '@lib/utils/textConverter'
+import arrowRight from '@assets/icons/arrow-right.svg'
+import Header from '@components/Header'
 ---
 
 <Base title={title} image={image?.src} >
+  <Header pathName={Astro.url.pathname} client:load />
   {image ? (
     <Image src={image.src} alt={image.alt} />
 ) : null}
@@ -44,6 +47,10 @@ import { markdownify } from '@lib/utils/textConverter'
               </dl>
       ))}
       </div>
+      <a role="button" href="/" class="group btn mt-10 w-full flex justify-between items-center">
+        <span>Check Policies and Guidelines</span>
+        <img class="transform transition ease-in-out group-hover:translate-x-5" src={arrowRight.src} alt={''}  />
+      </a>
     </main>
 </Base>
 

@@ -65,7 +65,8 @@ export default function Header({ pathName }: { pathName: string }) {
         </div>
       </div> */}
 
-      <header className="leading-5 inset-x-0  top-0 z-50 section-padding-x absolute py-5">
+      {/* <header className="leading-5 inset-x-0  top-0 z-50 section-padding-x absolute py-5"> */}
+      <header className="leading-5 inset-x-0  top-0 z-50 section-padding-x py-5">
         <nav
           className="flex items-center justify-between relative isolate"
           aria-label="Global"
@@ -86,7 +87,7 @@ export default function Header({ pathName }: { pathName: string }) {
               <a
                 key={item.name}
                 href={item.url}
-                className=" leading-6 hover:text-secondary"
+                className={`leading-6 hover:text-secondary ${item.url === pathName ? 'text-secondary' : ''}`}
               >
                 {item.name}
               </a>
