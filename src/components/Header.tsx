@@ -4,6 +4,7 @@ import menu from "@config/menu.json"
 import { Dialog } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
+import { BsCalendar2Plus } from 'react-icons/bs'
 const { city, address, phone } = config.contactInfo;
 
 export type NavLink = {
@@ -94,9 +95,11 @@ export default function Header({ pathName }: { pathName: string }) {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className={`btn-dark border-0`}>
-              Book Now
-            </a>
+          <a  role="button" href="#" className="group btn-dark border-0 inline-flex relative items-center">
+        <span className="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+        <BsCalendar2Plus className='transform transition ease-in-out right-10 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible' />
+    </a>
+         
           </div>
         </nav>
         <Dialog

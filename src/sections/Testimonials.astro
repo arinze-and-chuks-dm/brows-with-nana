@@ -1,5 +1,7 @@
 ---
 
+import { BsCalendar2Plus } from 'react-icons/bs'
+
 const testimonials = [
   {
     name: 'Wendy Heath',
@@ -34,7 +36,7 @@ const testimonials = [
     {
       testimonials.map(({ image, text, name }) => (
         <li class="col-span-1 flex flex-col bg-white text-center shadow">
-          <div class="flex flex-1 flex-col bg-[#F5EBEA]">
+          <div class="flex flex-1 flex-col bg-primary">
             <img
               src={image.src}
               alt={image.alt}
@@ -44,13 +46,16 @@ const testimonials = [
 
           <div>
             <div class=" p-9 text-center space-y-5">
-              <h4 class="text-[#423139] text-2xl font-bold">{name}</h4>
-              <p class="text-[#8F7880]">{text}</p>
+              <h4 class="text-dark text-2xl font-bold">{name}</h4>
+              <p >{text}</p>
             </div>
           </div>
         </li>
       ))
     }
   </ul>
-  <button type="button" class="btn-dark border-0">Book Now</button>
+  <a  role="button" href="#" class="group btn-dark border-0 inline-flex relative items-center">
+    <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+    <BsCalendar2Plus className='transform transition ease-in-out right-10 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible' />
+</a>
 </section>

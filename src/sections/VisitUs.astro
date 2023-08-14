@@ -1,4 +1,5 @@
 ---
+import arrowRight from '@assets/icons/arrow-right.svg'
 import email from '@assets/icons/email.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
 import phone from '@assets/icons/phone.svg'
@@ -29,7 +30,10 @@ const data =  [
 
             ))}
         </ul>
-        <button type="button" class="btn">View on map</button>
+        <button role="button"  class="group btn inline-flex relative items-center">
+            <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
+            <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+        </button>
         </div>
     </div>
     <div class="leaf-image-container">
