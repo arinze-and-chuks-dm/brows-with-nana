@@ -29,10 +29,12 @@ const data =  [
     {text: contactInfo.phone, icon: email},
     {text: contactInfo.email, icon: phone},
 ]
+const { title } = Astro.props
+const is404Page = title === '404'
 ---
-<Instagram />
-{Astro.url.pathname !== '/contact-us' ?  <GetStartWithUs  /> : null}
-<footer aria-labelledby="footer-heading">
+{!is404Page ? <Instagram /> : null}
+{Astro.url.pathname !== '/contact-us' && !is404Page ?  <GetStartWithUs  /> : null}
+<footer class:list={[{'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-7xl pb-8 pt-16">
     <div class="xl:grid xl:grid-cols-5 xl:gap-8">
