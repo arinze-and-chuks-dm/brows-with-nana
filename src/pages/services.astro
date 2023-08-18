@@ -1,13 +1,13 @@
 ---
-import Instagram from '@sections/Instagram.astro'
 import Base from '../layouts/Base.astro'
-import BrowServices from '@sections/BrowServices.astro';
+import BrowServices from '@sections/BrowServices.astro'
+import Header from '@components/Header.astro'
 ---
 
 <Base
   title="Brows with Nana | Microblading Plano, TX"
   description="A permanent makeup/cosmetics service in Plano, TX specializing in microblading techniques. I offer microblading, microshading, and combination brows. I trained with the best at Hoshi Studio in Frisco, TX with Holly Starcevich and am constantly improving my knowledge and techniques in the PMU industry."
 >
+<Header  client:load />
 <BrowServices/>
-  <Instagram /> 
 </Base>
