@@ -1,16 +1,23 @@
 ---
-import { markdownify } from '@lib/utils/textConverter';
+import { markdownify } from '@lib/utils/textConverter'
+import { Image } from 'astro:assets'
 
 const { data } = Astro.props;
-const { title } = data.data;
+const { title, description, image } = data.data;
 const { Content } = await data.render();
 ---
 
-<section class="section">
-  <div>
+        {image ? (
+            <Image src={image.src} alt={image.alt} />
+        ) : null}
+<main class="section">
+
     <h1 set:html={markdownify(title)} class="h2 page-heading" />
+    <p class="text-center mb-20" set:html={markdownify(description)} />
     <div class="content">
+      
       <Content />
+
+
     </div>
-  </div>
-</section>
+  </main>

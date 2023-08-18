@@ -1,0 +1,69 @@
+---
+import Base from '@layouts/Base.astro'
+import { getEntryBySlug } from 'astro:content'
+const entry = await getEntryBySlug('pages', 'frequently-asked-questions');
+const { title, image, faq, description } = entry.data;
+const { Content } = await entry.render();
+import { Image } from 'astro:assets'
+import { markdownify } from '@lib/utils/textConverter'
+import arrowRight from '@assets/icons/arrow-right.svg'
+import Header from '@components/Header.astro'
+---
+
+<Base title={title} image={image?.src} >
+  <Header client:load />
+  {image ? (
+    <Image src={image.src} alt={image.alt} />
+) : null}
+  <main class="section">
+    <h1 set:html={markdownify(title)} class="h2 page-heading" />
+    {description ? <p class="text-center mb-20" set:html={markdownify(description)} /> : null}
+    <Content />
+    <div class=" px-3 py-10 lg:p-24 bg-primary rounded-lg space-y-5">
+        {faq?.map(({ question, answer }, index) => (
+              <dl id="faq" class="bg-white rounded-lg space-y-6 divide-y p-3">
+                <div>
+                  <dt>
+                    <button id={`btn-${index}`} data-faq={index} type="button" class="flex w-full items-start text-left text-black space-x-3 " aria-controls={`answer-${index}`} aria-expanded="false">
+                      <span class="flex h-7 items-center">
+                        <svg id={`close-${index}`} class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                        </svg>
+                        <svg id={`open-${index}`} class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                        </svg>
+                      </span>
+                      <span class="text-base leading-7">{question}</span>
+                    </button>
+                  </dt>
+                  <dd class="mt-2 pl-10 hidden space-y-5" id={`answer-${index}`}>
+                    {answer.map(p => {
+                    return <p class="text-base leading-7">
+                      {p}
+                    </p>
+                    })}
+                 </dd>
+                </div>
+              </dl>
+      ))}
+      </div>
+      <a role="button" href="/" class="group btn mt-10 w-full flex justify-between items-center">
+        <span>Check Policies and Guidelines</span>
+        <img class="group-hover:animate-shake" src={arrowRight.src} alt={''}  />
+      </a>
+    </main>
+</Base>
+
+<script>
+    const faqs = document.querySelectorAll('#faq');
+    faqs.forEach((event, index) => {
+  event.addEventListener("click", ()  => {
+    const closeIcon = document.getElementById(`close-${index}`), answer = document.getElementById(`answer-${index}`), openIcon = document.getElementById(`open-${index}`);
+    const btn = document.getElementById(`btn-${index}`); 
+    btn?.toggleAttribute('aria-expanded');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    answer?.classList.toggle('hidden');
+  });
+});
+</script>

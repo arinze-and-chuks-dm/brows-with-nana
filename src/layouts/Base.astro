@@ -1,10 +1,9 @@
 ---
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header';
-import config from '@config/config.json';
-import theme from '@config/theme.json';
-import { plainify } from '@lib/utils/textConverter';
-import '@styles/style.scss';
+import Footer from '@components/Footer.astro'
+import config from '@config/config.json'
+import theme from '@config/theme.json'
+import { plainify } from '@lib/utils/textConverter'
+import '@styles/style.scss'
 
 export type Props = {
   title?: string;
@@ -124,11 +123,10 @@ const { title, meta_title, description, image, noindex, canonical } =
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="grid min-h-screen grid-rows-[auto_1fr_auto]">
-    <Header pathName={Astro.url.pathname} client:load />
-    <main class="space-y-10">
+  <body class="grid min-h-screen grid-rows-[1fr_auto]">
+    <div class="space-y-10">
       <slot />
-    </main>
-    <Footer />
+    </div>
+    <Footer title={title} />
   </body>
 </html>

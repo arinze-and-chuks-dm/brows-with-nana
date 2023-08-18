@@ -1,4 +1,5 @@
 ---
+import arrowRight from '@assets/icons/arrow-right.svg'
 import email from '@assets/icons/email.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
 import phone from '@assets/icons/phone.svg'
@@ -6,20 +7,20 @@ import visitUsImage from '@assets/images/visit-us.jpg'
 import config from '@config/config.json'
 import { markdownify } from '@lib/utils/textConverter'
 import { Image } from 'astro:assets'
-const { contactInfo } = config
+const { contact_info, site } = config
 
 const data =  [
-    {text: contactInfo.address, icon: locationIcon},
-    {text: contactInfo.phone, icon: email},
-    {text: contactInfo.email, icon: phone},
+    {text: contact_info.address, icon: locationIcon},
+    {text: contact_info.phone, icon: email},
+    {text: contact_info.email, icon: phone},
 ]
 ---
 
-<section class="section grid grid-cols-2 gap-20">
+<section class="section grid grid-cols-1 lg:grid-cols-2 gap-20 section-padding-y">
     <div class="space-y-10 self-center">
-        <h3 class="text-6xl">Visit us @ <span set:html={markdownify(contactInfo.city)} /> </h3>
+        <h3 class=" text-5xl lg:text-6xl">Visit us @ <span set:html={markdownify(contact_info.city)} /> </h3>
         <div class="space-y-5">
-            <h5 class="text-text text-3xl">Brows with Nana</h5>
+            <h5 class="text-text text-3xl" set:html={markdownify(site.title)} />
         <ul class="space-y-5">
             {data.map(item => (
                 <li class="text-2xl flex space-x-2">
@@ -29,10 +30,13 @@ const data =  [
 
             ))}
         </ul>
-        <button type="button" class="btn">View on map</button>
+        <button role="button"  class="group btn inline-flex relative justify-center items-center">
+            <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
+            <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+        </button>
         </div>
     </div>
-    <div class="leaf-image-container">
+    <div class="leaf-image-container mx-auto">
       <Image class="object-full col-span-8 self-end " src={visitUsImage} alt="Brows by nana studio" />
     </div>
 </section>
