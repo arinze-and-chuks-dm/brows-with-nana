@@ -1,7 +1,7 @@
 ---
 import arrowRight from '@assets/icons/arrow-right.svg'
 import leaf from '@assets/icons/leaf-up.svg'
-import Header from '@components/Header'
+import Header from '@components/Header.astro'
 import config from '@config/config.json'
 import Base from '@layouts/Base.astro'
 const {
@@ -10,9 +10,9 @@ const {
 ---
 
 <Base title='404' description='404 page'>
-  <div class=" min-h-screen">
+  <main class=" min-h-screen">
 
-    <Header pathName={Astro.url.pathname} client:load />
+    <Header  client:load />
     <div class="section">
       <div class="flex flex-shrink-0 justify-center">
         <a href="/" class="inline-flex">
@@ -34,5 +34,5 @@ const {
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </Base>

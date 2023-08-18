@@ -3,16 +3,10 @@ import meetYourArtist from '@assets/images/meet-your-artist.jpg'
 import { Image } from "astro:assets"
 ---
 
-<section class="section grid lg:grid-cols-2  gap-20">
-  <div class="leaf-image-container grid-rows-2">
-    <Image
-      src={meetYourArtist}
-      alt="Artist Nancy Lin microblading a female client"
-    />
-  </div>
+<section class="section grid lg:grid-cols-2 gap-y-10 lg:gap-20">
   <div class="space-y-5 self-center grid-rows-1">
     <h3 class="text-6xl">Meet your artist</h3>
-    <p >
+    <p>
       Welcome to Brows with Nana, and thank you for stopping by! My name is
       Nancy, but my friends call me Nana for short. I am the artist/owner behind
       Brows with Nana, located in the heart of Plano, TX (later relocated to
@@ -23,5 +17,11 @@ import { Image } from "astro:assets"
       iste, ipsum nulla minus alias iure facere eos eligendi itaque cupiditate
       quod optio velit esse, ea sed corporis atque eaque?
     </p>
+  </div>
+  <div class="leaf-image-container mx-auto grid-rows-2 lg:-order-1 ">
+    <Image
+      src={meetYourArtist}
+      alt="Artist Nancy Lin microblading a female client"
+    />
   </div>
 </section>

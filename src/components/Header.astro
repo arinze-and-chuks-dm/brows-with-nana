@@ -1,0 +1,142 @@
+---
+import chevronDownIcon from '@assets/icons/chevron-down.svg'
+import locationPinIcon from '@assets/icons/location-pin.svg'
+import arrowRight from '@assets/icons/arrow-right.svg'
+import menu from "@config/menu.json"
+import { contact_info, site, params } from "@config/config.json"
+import Logo from './Logo.astro'
+import { markdownify } from '@lib/utils/textConverter'
+const { pathname } = Astro.url
+const { main }: { main: Array<NavLink> } = menu;
+
+
+export type NavLink = {
+  name: string;
+  url: string;
+  children?: NavLink[];
+};
+---
+
+<header class="inset-x-0 space-y-5">
+        <!-- store info -->
+      <div class="relative z-50 shadow">
+        <!-- button -->
+        <button id="location-dropdown-btn" aria-controls="location-dropdown-content" class="bg-dark w-full text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x">
+          <div class="flex justify-center space-x-1">
+            <img src={locationPinIcon.src} />
+            <span set:html={markdownify(contact_info.city)} />
+          </div>
+          <div  class="flex items-center space-x-1">
+            <span>Location + Number</span>
+            <img src={chevronDownIcon.src} />
+          </div>
+        </button>
+        <!-- content -->
+        <div id="location-dropdown-content" class="hidden absolute inset-x-0 text-dark bg-primary pt-16 shadow-lg ring-1 ring-gray-900/5 flex-col px-5 md:flex-row md:items-center md:justify-around">
+          <p set:html={markdownify(contact_info.hours)} />
+          <div class="py-10 space-y-5">
+            <p set:html={markdownify(contact_info.address)} />
+            <button class="btn" type="button">
+              CALL{" "}
+              <span set:html={markdownify(contact_info.phone)} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+        <nav class="mx-auto flex  items-center justify-between section-padding-x" aria-label="Global">
+          <div class="flex lg:flex-1">
+            <Logo />
+          </div>
+          <div class="flex lg:hidden">
+            <button id="open-mobile-menu-btn" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Open main menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            {main.map((item) => (
+              <a
+                href={item.url}
+                class:list={['leading-6 hover:text-secondary', { 'text-secondary': item.url === pathname }]}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a  role="button" href={params.booking_url} class="group btn-dark border-0 inline-flex relative items-center">
+              <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+  <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+          </a>
+          </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div id="mobile-menu" class="hidden" role="dialog" aria-modal="true">
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <div class="fixed inset-0 z-10"></div>
+          <div class="pt-16 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <Logo />
+              <button id="close-mobile-menu-btn" type="button" class="-m-2.5 rounded-md p-2.5">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-dark">
+                <div class="space-y-2 py-6">
+                  <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base italic font-semibold leading-7  hover:text-secondary" set:html={markdownify(site.title)} />
+                  {main.map((item) => (
+                    <a
+                      href={item.url}
+                      class:list={['leading-6 block hover:text-secondary', { 'text-secondary': item.url === pathname }]}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                <div class="py-6">
+                  <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
+                    <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+                </a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+</header>
+
+    <script>
+const locationDropDownButton = document.getElementById('location-dropdown-btn')
+const locationDropDown = document.getElementById('location-dropdown-content')
+const closeMobileMenuButton = document.getElementById('close-mobile-menu-btn')
+const openMobileMenuButton = document.getElementById('open-mobile-menu-btn')
+const mobileMenu = document.getElementById('mobile-menu')
+
+if (!locationDropDownButton || !locationDropDown || !closeMobileMenuButton || !openMobileMenuButton) {
+    throw new Error('locationDropDownButton or locationDropDown is null')
+}
+
+locationDropDownButton.addEventListener('click', () => {
+  locationDropDown?.classList.contains('hidden') ? locationDropDown.classList.replace('hidden', 'flex') : locationDropDown.classList.replace('flex', 'hidden')
+})
+
+closeMobileMenuButton.addEventListener('click', () => {
+  mobileMenu?.classList.add('hidden')
+})
+
+openMobileMenuButton.addEventListener('click', () => {
+  mobileMenu?.classList.remove('hidden')
+})
+
+        
+    </script>

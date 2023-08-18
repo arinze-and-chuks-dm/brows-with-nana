@@ -1,7 +1,6 @@
 ---
 
-import { BsCalendar2Plus } from 'react-icons/bs'
-
+import arrowRight from '@assets/icons/arrow-right.svg'
 const testimonials = [
   {
     name: 'Wendy Heath',
@@ -30,9 +29,9 @@ const testimonials = [
 ];
 ---
 
-<section class="section-colored space-y-10 flex items-center flex-col">
+<section class="section-colored space-y-10 flex items-center flex-col section-padding-y">
   <h3 class="text-center text-6xl ">Hear from Our Clients</h3>
-  <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+  <ul role="list" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {
       testimonials.map(({ image, text, name }) => (
         <li class="col-span-1 flex flex-col bg-white text-center shadow">
@@ -54,8 +53,8 @@ const testimonials = [
       ))
     }
   </ul>
-  <a  role="button" href="#" class="group btn-dark border-0 inline-flex relative items-center">
+  <a  role="button" href="#" class="group btn-dark border-0 inline-flex justify-center relative items-center">
     <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-    <BsCalendar2Plus className='transform transition ease-in-out right-10 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible' />
+        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
 </a>
 </section>

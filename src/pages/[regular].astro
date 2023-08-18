@@ -1,5 +1,5 @@
 ---
-import Header from '@components/Header'
+import Header from '@components/Header.astro'
 import Base from '@layouts/Base.astro'
 import Default from '@layouts/Default.astro'
 import { getSinglePage } from '@lib/contentParser.astro'
@@ -30,6 +30,7 @@ const { title, meta_title, description, image } = page.data
   description={description}
   image={image?.src}
 >
-    <Header pathName={Astro.url.pathname} client:load />
+    <!-- <Header pathName={Astro.url.pathname} client:load /> -->
+    <Header client:load />
   <Default data={page} />
 </Base>

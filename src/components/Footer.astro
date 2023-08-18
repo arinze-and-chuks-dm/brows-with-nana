@@ -11,38 +11,34 @@ import phone from '@assets/icons/phone.svg'
 import tiktok from '@assets/icons/tiktok.svg'
 import twitter from '@assets/icons/twitter.svg'
 import youtube from '@assets/icons/youtube.svg'
-import logo from '@assets/images/brows-with-nana-logo.png'
 import config from '@config/config.json'
 import menu from '@config/menu.json'
 import { markdownify } from '@lib/utils/textConverter'
 import GetStartWithUs from '@sections/GetStartWithUs.astro'
 import Instagram from '@sections/Instagram.astro'
+import Logo from './Logo.astro'
 const {
-  params: { copyright } = {},
-  contactInfo,
-  site: { logo_text} = {}
+  params,
+  contact_info,
 } = config;
 
 const { main } = menu;
 const data =  [
-    {text: contactInfo.address, icon: locationIcon},
-    {text: contactInfo.phone, icon: email},
-    {text: contactInfo.email, icon: phone},
+    {text: contact_info.address, icon: locationIcon},
+    {text: contact_info.phone, icon: email},
+    {text: contact_info.email, icon: phone},
 ]
 const { title } = Astro.props
 const is404Page = title === '404'
 ---
 {!is404Page ? <Instagram /> : null}
 {Astro.url.pathname !== '/contact-us' && !is404Page ?  <GetStartWithUs  /> : null}
-<footer class:list={[{'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
+<footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="mx-auto max-w-7xl pb-8 pt-16">
-    <div class="xl:grid xl:grid-cols-5 xl:gap-8">
-      <div class="">
-        <img
-        src={logo.src}
-          alt={logo_text}
-        />
+  <div class="mx-auto  pb-8 pt-16">
+    <div class="gap-y-10 gap-x-5 grid grid-cols-2 xl:grid-cols-5 xl:gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <Logo />
       </div>
       <div class="col-span-1 space-y-5">
         <h3 class="text-sm font-semibold leading-6">Links</h3>
@@ -107,11 +103,9 @@ const is404Page = title === '404'
 
     </div>
     <div
-      class="mt-16 text-center border-t border-black/10 pt-8 sm:mt-20 lg:mt-24"
+      class="mt-16 text-center border-t border-dark pt-8 sm:mt-20 lg:mt-24"
     >
-      <p class="text-xs leading-5">
-        {copyright}
-      </p>
+      <p class="text-xs leading-5" set:html={markdownify(params.copyright)} />
     </div>
   </div>
 </footer>

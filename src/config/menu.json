@@ -15,33 +15,6 @@
     {
       "name": "Contact Us",
       "url": "/contact-us"
-    },
-    {
-      "name": "Blog",
-      "url": "/blog"
-    },
-
-    {
-      "name": "About",
-      "url": "/about",
-      "children": [
-        {
-          "name": "About Me",
-          "url": "/about"
-        },
-        {
-          "name": "Read Before Booking",
-          "url": "/read-before-booking"
-        },
-        {
-          "name": "FAQ",
-          "url": "/frequently-asked-questions"
-        },
-        {
-          "name": "Policy and guidelines",
-          "url": "/policy-and-guidelines"
-        }
-      ]
     }
   ]
 }

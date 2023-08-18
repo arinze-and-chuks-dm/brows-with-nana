@@ -1,13 +1,14 @@
 .section-padding-x {
-  @apply px-2 sm:px-5 md:px-10 xl:px-60;
+  @apply px-2 sm:px-10 lg:px-20 xl:px-60;
 }
 
 .section-padding-y {
-  @apply md:py-28;
+  @apply py-10 lg:py-28;
 }
+
 // section style
 .section {
-  @apply section-padding-x section-padding-y;
+  @apply section-padding-x section-padding-y ;
 }
 
 .section-colored {
@@ -38,52 +39,11 @@
   }
 }
 
-// author-image
-.author-image {
-  @apply mr-2 align-top;
-  img {
-    @apply max-h-[25px] max-w-[25px] rounded-full;
-  }
-}
-
-.social-icons-simple {
-  @apply space-x-2;
-  li {
-    @apply inline-block;
-    a {
-      @apply block p-3 text-dark transition hover:text-primary;
-      svg {
-        @apply text-lg;
-      }
-    }
-  }
-}
-
-.social-share {
-  @apply space-x-1;
-  li {
-    @apply inline-block;
-    a {
-      @apply block p-3 transition transition duration-300 hover:text-primary;
-    }
-  }
-}
-
-// form style
-.form-input,
-.form-textarea {
-  @apply rounded-md border-border py-3 text-text focus:border-primary focus:ring-transparent;
-}
-
 // content style
 .content {
   @apply prose max-w-none prose-headings:font-bold prose-h1:mb-4  prose-h2:mb-4 prose-h2:mt-4  prose-h3:mt-4  prose-h4:mt-4 prose-h5:mb-4 prose-h6:mb-6 prose-blockquote:rounded-lg prose-blockquote:border-primary prose-blockquote:px-7 prose-blockquote:py-3 prose-blockquote:text-lg prose-blockquote:leading-8 prose-pre:px-6 prose-pre:py-5   ;
 }
 
-// footer
-// footer p a {
-//   @apply transition-all duration-200 hover:text-white;
-// }
 
 .leaf-image-container {
   @apply relative before:content-leaf-down before:absolute before:-start-20 before:-z-10 after:content-leaf-up after:absolute after:bottom-0 after:end-8 after:-z-10;
@@ -91,4 +51,12 @@
 
 .social-icons {
   @apply text-sm leading-6 transition ease-in-out hover:scale-125 w-fit
+}
+
+.banner-bg {
+  background: linear-gradient(
+      120deg,
+      rgba(231, 220, 237, 1) 0%,
+      rgba(254, 247, 252, 1) 86%
+    );
 }

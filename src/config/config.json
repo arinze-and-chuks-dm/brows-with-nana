@@ -3,26 +3,26 @@
     "title": "Brows with Nana",
     "base_url": "https://browswithnana.com",
     "base_path": "/",
-    "trailing_slash": false,
     "favicon": "/favicon.svg",
     "logo": "../assets/icons/brows-with-nana-logo.png",
-    "logo_width": "150",
-    "logo_height": "150",
-    "logo_text": "Brows with Nana"
+    "logo_text": "Brows with Nana Logo"
   },
   "metadata": {
     "meta_author": "Nancy Lin",
     "meta_image": "/images/brows-with-nana-logo.png",
     "meta_description": "meta description"
   },
-
   "params": {
     "contact_form_action": "#",
-    "copyright": "© 2023 Brows with Nana. All rights reserved."
+    "copyright": "© 2023 Brows with Nana. All rights reserved.",
+    "booking_url": "https://bookhoshistudio.as.me/schedule.php?appointmentType=category%3ANancy"
   },
+  "contact_info": {
   "hours": "Monday - Friday: 8:30am - 7pm <br /> Saturday: 9am - 5pm <br/> Sunday: Closed",
-  "contactInfo": {
     "address": "355 S Grand Ave <br/> Los Angeles, CA 90071",
+    "street": "355 S Grand Ave",
+    "state": "CA",
+    "zip": "90071",
     "city": "Plano, TX",
     "email": "info@bookworm.org",
     "phone": "+800 567 1234"

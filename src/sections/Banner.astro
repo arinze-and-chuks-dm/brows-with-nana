@@ -1,35 +1,26 @@
 ---
 import arrowRight from '@assets/icons/arrow-right.svg'
 import heroGirl from '@assets/images/hero-girl.png'
-import Header from '@components/Header'
+import Header from '@components/Header.astro'
+import { params } from "@config/config.json"
 import { Image } from 'astro:assets'
 ---
 
-<div class="banner-bg">
-  <Header pathName={Astro.url.pathname} client:load />
+<div class="banner-bg min-h-screen space-y-10">
+  <Header  client:load />
   <div
-    class="mx-auto max-w-7xl grid grid-cols-1 md:gap-y-5 lg:grid-cols-12"
+    class="mx-auto grid grid-cols-1 md:gap-y-5 lg:grid-cols-12 gap-y-10 section-padding-x"
   >
-    <div class="space-y-5 animate-fade-right self-center lg:col-span-4">
+    <div class="space-y-6 col-span-5 animate-fade-right self-center lg:col-span-5">
       <h2 class="">Stand Out with Beautiful Brows!</h2>
       <p class="font-secondary italic font-extralight text-lg md:w-2/3">
         Enhance Your Beauty, Frame Your Confidence: Flawless Brows by Experts
       </p>
-      <a role="button" href="/"  class="group btn inline-flex relative items-center">
+      <a role="button" href={params.booking_url}  class="group justify-center btn inline-flex relative items-center">
         <span class="transform transition ease-in-out group-hover:-translate-x-5">Schedule an appointments</span>
         <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
       </a>
     </div>
-      <Image class="object-contain col-span-8" src={heroGirl} alt="" />
+      <Image loading='eager' class="col-span-7" src={heroGirl} alt="" />
   </div>
 </div>
-
-<style>
-  .banner-bg {
-    background: linear-gradient(
-      120deg,
-      rgba(231, 220, 237, 1) 0%,
-      rgba(254, 247, 252, 1) 86%
-    );
-  }
-</style>

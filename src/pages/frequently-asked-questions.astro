@@ -7,19 +7,19 @@ const { Content } = await entry.render();
 import { Image } from 'astro:assets'
 import { markdownify } from '@lib/utils/textConverter'
 import arrowRight from '@assets/icons/arrow-right.svg'
-import Header from '@components/Header'
+import Header from '@components/Header.astro'
 ---
 
 <Base title={title} image={image?.src} >
-  <Header pathName={Astro.url.pathname} client:load />
+  <Header client:load />
   {image ? (
     <Image src={image.src} alt={image.alt} />
 ) : null}
-  <div class="section">
+  <main class="section">
     <h1 set:html={markdownify(title)} class="h2 page-heading" />
     {description ? <p class="text-center mb-20" set:html={markdownify(description)} /> : null}
     <Content />
-    <div class="p-24 bg-primary rounded-lg space-y-5">
+    <div class=" px-3 py-10 lg:p-24 bg-primary rounded-lg space-y-5">
         {faq?.map(({ question, answer }, index) => (
               <dl id="faq" class="bg-white rounded-lg space-y-6 divide-y p-3">
                 <div>
@@ -51,7 +51,7 @@ import Header from '@components/Header'
         <span>Check Policies and Guidelines</span>
         <img class="group-hover:animate-shake" src={arrowRight.src} alt={''}  />
       </a>
-    </div>
+    </main>
 </Base>
 
 <script>
