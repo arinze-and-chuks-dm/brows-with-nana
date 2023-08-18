@@ -1,6 +1,7 @@
 ---
 import chevronDownIcon from '@assets/icons/chevron-down.svg'
 import locationPinIcon from '@assets/icons/location-pin.svg'
+import phone from '@assets/icons/phone.svg'
 import arrowRight from '@assets/icons/arrow-right.svg'
 import menu from "@config/menu.json"
 import { contact_info, site, params } from "@config/config.json"
@@ -19,9 +20,9 @@ export type NavLink = {
 
 <header class="inset-x-0 space-y-5">
         <!-- store info -->
-      <div class="relative z-50 shadow">
+      <div class="relative z-50 shadow ">
         <!-- button -->
-        <button id="location-dropdown-btn" aria-controls="location-dropdown-content" class="bg-dark w-full text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x">
+        <button  id="location-dropdown-btn" aria-controls="location-dropdown-content" class="bg-[#8F7883] w-full text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x">
           <div class="flex justify-center space-x-1">
             <img src={locationPinIcon.src} />
             <span set:html={markdownify(contact_info.city)} />
@@ -32,15 +33,18 @@ export type NavLink = {
           </div>
         </button>
         <!-- content -->
-        <div id="location-dropdown-content" class="hidden absolute inset-x-0 text-dark bg-primary pt-16 shadow-lg ring-1 ring-gray-900/5 flex-col px-5 md:flex-row md:items-center md:justify-around">
-          <p set:html={markdownify(contact_info.hours)} />
-          <div class="py-10 space-y-5">
+        <div id="location-dropdown-content" class="hidden grid-cols-2 items-center section-padding-x py-10 absolute inset-x-0 text-primary bg-dark divide-x-2 divide-primary shadow-lg">
+
+          <div class="space-y-5 px-10 justify-self-end">
             <p set:html={markdownify(contact_info.address)} />
-            <button class="btn" type="button">
-              CALL{" "}
-              <span set:html={markdownify(contact_info.phone)} />
+            <button role="button" class="group justify-center btn inline-flex relative items-center text-dark bg-primary border-primary">
+              <span class="transform transition ease-in-out group-hover:-translate-x-5" set:html={markdownify(contact_info.phone)} />
+              <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={phone.src} alt={''}  />
+
             </button>
           </div>
+
+          <p class="px-10" set:html={markdownify(contact_info.hours)} />
         </div>
       </div>
 
@@ -127,7 +131,7 @@ if (!locationDropDownButton || !locationDropDown || !closeMobileMenuButton || !o
 }
 
 locationDropDownButton.addEventListener('click', () => {
-  locationDropDown?.classList.contains('hidden') ? locationDropDown.classList.replace('hidden', 'flex') : locationDropDown.classList.replace('flex', 'hidden')
+  locationDropDown?.classList.contains('hidden') ? locationDropDown.classList.replace('hidden', 'grid') : locationDropDown.classList.replace('grid', 'hidden')
 })
 
 closeMobileMenuButton.addEventListener('click', () => {
