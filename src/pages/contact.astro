@@ -1,0 +1,26 @@
+---
+import Base from '@layouts/Base.astro'
+
+import { Image } from 'astro:assets'
+
+import Header from '@components/Header.astro'
+---
+
+<Base title={title} image={image?.src} >
+  <Header client:load />
+  {image ? (
+    <Image src={image.src} alt={image.alt} />
+) : null}
+  <section class="section  ">
+    <div class="grid lg:grid-cols-2  gap-20 service-bg p-16">
+    <div class="space-y-5 self-center grid-rows-1">
+     
+    </div>
+    <div class="leaf-image-container grid-rows-2">
+      
+    </div>
+  </div>
+  </section>
+</Base>
+
+

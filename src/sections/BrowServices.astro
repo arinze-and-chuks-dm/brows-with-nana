@@ -5,10 +5,13 @@ import featherBrows from '@assets/images/featherbrows.png'
 import nanasign from '@assets/images/nanasign.png'
 import serviceHero from '@assets/images/servicesHero.png'
 import { Image } from "astro:assets"
+import { params } from "@config/config.json"
+import arrowRight from '@assets/icons/arrow-right.svg'
+
 ---
-<section class="section md:pt-48 grid lg:grid-cols-2  gap-20">
+<section class="section md:pt-0 grid lg:grid-cols-2  gap-20">
   
-  <div class="space-y-5 self-center grid-rows-1 banner-bg p-16">
+  <div class="space-y-5 self-center grid-rows-1 banner-bg p-16 relative left-40">
     <h3 class="text-6xl">Welcome Lovelies</h3>
     <p>
       Thank you for stopping by at Brows with Nana (aka Hoshi.Studio.Nana), a semi-permanent makeup boutique located in Plano, TX (NEW LOCATION AT HOSHI STUDIO IN FRISCO, TX!) specializing in the most trendy, state-of-the art, natural microblading and shading techniques to create the brows you've always dreamed of.
@@ -135,6 +138,12 @@ import { Image } from "astro:assets"
           This does not include the initial touch-up which is booked separately    
         </li> 
     </ul>
+    <div class="py-6 w-1/2">
+      <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
+        <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+<img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+    </a>
+    </div>
   </div>
   <div class="leaf-image-container grid-rows-2">
     <Image
