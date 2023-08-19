@@ -28,7 +28,7 @@ const { title } = Astro.props
 const is404Page = title === '404'
 ---
 {!is404Page ? <Instagram /> : null}
-{['/contact-us'].includes(Astro.url.pathname) && !is404Page ?  null : <GetStartWithUs  />}
+{['/contact'].includes(Astro.url.pathname) || is404Page ?  null : <GetStartWithUs  />}
 <footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto  pb-8 pt-16">
