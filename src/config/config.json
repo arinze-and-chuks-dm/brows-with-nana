@@ -26,5 +26,11 @@
     "city": "Plano, TX",
     "email": "info@bookworm.org",
     "phone": "+800 567 1234"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/browswithnana",
+    "instagram": "https://www.instagram.com/browswithnana",
+    "twitter": "https://twitter.com/browswithnana",
+    "youtube": "https://www.youtube.com/channel/UCXuqSARZIYxv7XZ9ZQ5Yx7A"
   }
 }

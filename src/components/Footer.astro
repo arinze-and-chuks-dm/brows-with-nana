@@ -1,14 +1,9 @@
 ---
-// import Social from '@components/Social.astro'
-// import config from '@config/config.json'
-// import { markdownify } from '@lib/utils/textConverter'
-// TODO: UPDATE logo to svg
 import email from '@assets/icons/email.svg'
 import facebook from '@assets/icons/facebook.svg'
 import instagram from '@assets/icons/instagram.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
 import phone from '@assets/icons/phone.svg'
-import tiktok from '@assets/icons/tiktok.svg'
 import twitter from '@assets/icons/twitter.svg'
 import youtube from '@assets/icons/youtube.svg'
 import config from '@config/config.json'
@@ -20,6 +15,7 @@ import Logo from './Logo.astro'
 const {
   params,
   contact_info,
+  social
 } = config;
 
 const { main } = menu;
@@ -32,7 +28,7 @@ const { title } = Astro.props
 const is404Page = title === '404'
 ---
 {!is404Page ? <Instagram /> : null}
-{Astro.url.pathname !== '/contact-us' && !is404Page ?  <GetStartWithUs  /> : null}
+{['/contact-us'].includes(Astro.url.pathname) && !is404Page ?  null : <GetStartWithUs  />}
 <footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto  pb-8 pt-16">
@@ -85,20 +81,16 @@ const is404Page = title === '404'
   <a href="#" class="social-icons">
     <img src={youtube.src} alt="youtube" />
   </a>
-  <a href="#" class="social-icons">
+  <a href={social.facebook} class="social-icons">
     <img src={facebook.src} alt="facebook" />
   </a>
-  <a href="#" class="social-icons">
+  <a href={social.twitter} class="social-icons">
     <img src={twitter.src} alt="twitter" />
   </a>
-  <a href="#" class="social-icons">
+  <a href={social.instagram} class="social-icons">
     <img src={instagram.src} alt="instagram" />
   </a>
-  <a href="#" class="social-icons">
-    <img src={tiktok.src} alt="tiktok" />
-  </a>
 </div>
-
       </div>
 
     </div>

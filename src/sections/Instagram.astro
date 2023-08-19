@@ -20,9 +20,11 @@ const instagramFeed = [
     },
 ];
 
+console.log({pathname})
+
 ---
 
-<section class:list={["section space-y-10 flex align-middle justify-center flex-col section-padding-y", { 'bg-primary': pathname === '/contact-us' }]}>
+<section class:list={["section space-y-10 flex align-middle justify-center flex-col section-padding-y", { 'bg-primary': ['/contact-us'].includes(pathname) }]}>
     <a
         class="hover:underline underline-offset-8"
         target="_blank"

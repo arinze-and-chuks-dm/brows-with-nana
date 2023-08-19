@@ -10,15 +10,11 @@
     }, 
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact-us"
     },
     {
       "name": "FAQs",
       "url": "/frequently-asked-questions"
-    },
-    {
-      "name": "Contact Us",
-      "url": "/contact-us"
     }
   ]
 }
