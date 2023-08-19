@@ -1,11 +1,15 @@
 ---
 
 import arrowRight from '@assets/icons/arrow-right.svg'
+import testimonialImage1 from '@assets/images/testimonial-1.png'
+import testimonialImage2 from '@assets/images/testimonial-2.png'
+import testimonialImage3 from '@assets/images/testimonial-3.png'
+import { Image } from "astro:assets"
 const testimonials = [
   {
     name: 'Wendy Heath',
     image: {
-      src: 'images/testimonial-1.png',
+      src: testimonialImage1,
       alt: 'Wendy Heath',
     },
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
@@ -13,7 +17,7 @@ const testimonials = [
   {
     name: 'Wendy Heath',
     image: {
-      src: 'images/testimonial-2.png',
+      src: testimonialImage2,
       alt: 'Wendy Heath',
     },
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
@@ -21,7 +25,7 @@ const testimonials = [
   {
     name: 'Wendy Heath',
     image: {
-      src: 'images/testimonial-3.png',
+      src: testimonialImage3,
       alt: 'Wendy Heath',
     },
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
@@ -29,14 +33,14 @@ const testimonials = [
 ];
 ---
 
-<section class="section-colored space-y-10 flex items-center flex-col section-padding-y">
+<section class="section-colored space-y-10 flex items-center flex-col">
   <h3 class="text-center text-6xl ">Hear from Our Clients</h3>
   <ul role="list" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {
       testimonials.map(({ image, text, name }) => (
         <li class="col-span-1 flex flex-col bg-white text-center shadow">
           <div class="flex flex-1 flex-col bg-primary">
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
               class="w-full h-80 object-fill"

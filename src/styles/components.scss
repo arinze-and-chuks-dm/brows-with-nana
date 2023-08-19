@@ -1,5 +1,5 @@
 .section-padding-x {
-  @apply px-2 sm:px-10 lg:px-20 xl:px-60;
+  @apply px-2 sm:px-10 lg:px-20 xl:px-48;
 }
 
 .section-padding-y {
@@ -46,7 +46,15 @@
 
 
 .leaf-image-container {
-  @apply relative before:content-leaf-down before:absolute before:-start-20 before:-z-10 after:content-leaf-up after:absolute after:bottom-0 after:end-8 after:-z-10;
+  @apply right-leaf left-leaf relative h-fit ;
+}
+
+.right-leaf {
+  @apply  after:-end-0 after:-right-20 after:bottom-0  md:after:content-leaf-up after:absolute after:-z-10;
+}
+
+.left-leaf {
+  @apply md:before:content-leaf-down before:absolute before:start-0 before:-left-20 before:-z-10
 }
 
 .social-icons {
