@@ -1,32 +1,44 @@
 ---
+import arrowRight from '@assets/icons/arrow-right.svg'
+import longLeaf from '@assets/icons/long-leaf.svg'
+import featherBrows from '@assets/images/featherbrows.png'
 import microblading from '@assets/images/microblading.png'
 import microshading from '@assets/images/microhading.png'
-import featherBrows from '@assets/images/featherbrows.png'
 import nanasign from '@assets/images/nanasign.png'
 import serviceHero from '@assets/images/servicesHero.png'
-import { Image } from "astro:assets"
 import { params } from "@config/config.json"
-import arrowRight from '@assets/icons/arrow-right.svg'
-
+import { Image } from "astro:assets"
+// w-[798px] h-[603px]
 ---
-<section class="section md:pt-0 grid lg:grid-cols-2  gap-20">
+<div class=" grid grid-cols-12 gap-20">
   
-  <div class="space-y-5 self-center grid-rows-1 banner-bg p-16 relative left-40">
-    <h3 class="text-6xl">Welcome Lovelies</h3>
-    <p>
+  <div class="space-y-5 row-[span_1_/_span_2] col-span-7 rounded-lg self-center  relative  banner-bg p-16 ">
+    <h3 class="text-6xl">Welcome
+      <br />
+      Lovelies!
+    </h3>
+    <p class="w-3/4">
       Thank you for stopping by at Brows with Nana (aka Hoshi.Studio.Nana), a semi-permanent makeup boutique located in Plano, TX (NEW LOCATION AT HOSHI STUDIO IN FRISCO, TX!) specializing in the most trendy, state-of-the art, natural microblading and shading techniques to create the brows you've always dreamed of.
-    </p>
-    <p>
+      <br />
+      <br />
       Let's bring some transformative luxury into your everyday life.
     </p>
+
+    <img class="absolute bottom-0 right-0" src={longLeaf.src} alt={''}  />
+    <a role="button" href="/services" class="group btn inline-flex relative justify-center items-center">
+      <span class="transform transition ease-in-out group-hover:-translate-x-5">View Services</span>
+      <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+    </a>
   </div>
-  <div class=" grid-rows-2">
+  
+  <div class="row-[span_1_/_span_2] col-span-6">
     <Image
       src={serviceHero}
       alt="Banner image"
     />
   </div>
-</section>
+</div>
+
 <section class="section  grid lg:grid-cols-2  gap-20">
   <div class="leaf-image-container grid-rows-2">
     <Image
@@ -160,7 +172,6 @@ import arrowRight from '@assets/icons/arrow-right.svg'
 border: 1px solid #8F7880;
   },
   .banner-bg {
-    border-radius: 10px;
 background: #F5EBEA;
   }
 </style>

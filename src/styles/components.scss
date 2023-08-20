@@ -54,7 +54,7 @@
 }
 
 .left-leaf {
-  @apply md:before:content-leaf-down before:absolute before:start-0 before:-left-20 before:-z-10
+  @apply md:before:content-leaf-down before:absolute before:start-0 before:-left-20 before:-z-10;
 }
 
 .social-icons {
