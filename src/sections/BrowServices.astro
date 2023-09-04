@@ -1,43 +1,54 @@
 ---
+import arrowRight from '@assets/icons/arrow-right.svg'
+import longLeaf from '@assets/icons/long-leaf.svg'
+import featherBrows from '@assets/images/featherbrows.png'
 import microblading from '@assets/images/microblading.png'
 import microshading from '@assets/images/microhading.png'
-import featherBrows from '@assets/images/featherbrows.png'
 import nanasign from '@assets/images/nanasign.png'
 import serviceHero from '@assets/images/servicesHero.png'
-import { Image } from "astro:assets"
 import { params } from "@config/config.json"
-import arrowRight from '@assets/icons/arrow-right.svg'
-
+import { Image } from "astro:assets"
 ---
-<section class="section md:pt-0 grid lg:grid-cols-2  gap-20">
+
   
-  <div class="space-y-5 self-center grid-rows-1 banner-bg p-16 relative left-40">
-    <h3 class="text-6xl">Welcome Lovelies</h3>
-    <p>
+<div class="grid grid-cols-12 gap-20">
+  <div class="space-y-5 row-[1_/_span_2] col-[1_/_span_12] md:col-[3_/_span_7]  rounded-lg self-center  relative  banner-bg p-28">
+    <h3 class="text-6xl">Welcome
+      <br />
+      Lovelies!
+    </h3>
+    <p class="w-3/4">
       Thank you for stopping by at Brows with Nana (aka Hoshi.Studio.Nana), a semi-permanent makeup boutique located in Plano, TX (NEW LOCATION AT HOSHI STUDIO IN FRISCO, TX!) specializing in the most trendy, state-of-the art, natural microblading and shading techniques to create the brows you've always dreamed of.
-    </p>
-    <p>
+      <br />
+      <br />
       Let's bring some transformative luxury into your everyday life.
     </p>
+
+    <img class="absolute bottom-0 right-0" src={longLeaf.src} alt={''}  />
+    <a role="button" href="/services" class="group btn inline-flex relative justify-center items-center">
+      <span class="transform transition ease-in-out group-hover:-translate-x-5">View Services</span>
+      <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+    </a>
   </div>
-  <div class=" grid-rows-2">
+  
+  <div class="row-[1_/_span_2] -z-10 col-[1_/_span_12] ml-auto md:col-[6_/_span_12]">
     <Image
+    class='blur-sm lg:blur-none object-fill'
       src={serviceHero}
       alt="Banner image"
-    />
+    /> 
   </div>
-</section>
-<section class="section  grid lg:grid-cols-2  gap-20">
-  <div class="leaf-image-container grid-rows-2">
-    <Image
-      src={microblading}
-      alt="Artist Nancy Lin microblading a female client"
-    />
-  </div>
-  <div class="space-y-5 self-center grid-rows-1">
+</div>
+
+
+
+<h3 class="text-dark mt-20 text-center text-6xl">Brow Services</h3>
+
+<section class="section grid grid-cols-1 lg:grid-cols-2  gap-20">
+  <div class="space-y-5 self-center">
     <h3 class="text-6xl">Microblading</h3>
     <h5 class="text-2xl">Strokes Only | Only by Request</h3>
-    <ul class="marker:text-[#83B197] lg:list-disc">
+    <ul class="marker:text-secondary list-disc">
         <li >
           Microblading consists of 100% hair-like strokes 
         </li>
@@ -58,12 +69,18 @@ import arrowRight from '@assets/icons/arrow-right.svg'
         </li>
     </ul>
   </div>
-</section>
-<section class="section  grid lg:grid-cols-2  gap-20">
-  <div class="space-y-5 self-center grid-rows-1">
+    <div class="leaf-image-container mx-auto col-span-1 lg:-order-1 ">
+      <Image
+        src={microblading}
+        alt="Artist Nancy Lin microblading a female client"
+      />
+    </div>
+
+
+  <div class="space-y-5 self-center ">
     <h3 class="text-6xl">Microshading</h3>
     <h5 class="text-2xl">Shading Only</h3>
-    <ul class="marker:text-[#83B197] lg:list-disc">
+    <ul class="marker:text-secondary list-disc">
         <li>
           Microshading is 100% shading to resemble a natural, makeup look that creates an illusion of depth and an ombre effect | Clients can also request a natural look to a dramatic makeup look with Microshading 
         </li>
@@ -80,25 +97,19 @@ import arrowRight from '@assets/icons/arrow-right.svg'
         </li> 
     </ul>
   </div>
-  <div class="leaf-image-container grid-rows-2">
+  <div class="leaf-image-container  mx-auto">
     <Image
       src={microshading}
       alt="Artist Nancy Lin microblading a female client"
     />
   </div>
-</section>
 
-<section class="section  grid lg:grid-cols-2  gap-20">
-  <div class="leaf-image-container grid-rows-2">
-    <Image
-      src={featherBrows}
-      alt="Artist Nancy Lin microblading a female client"
-    />
-  </div>
-  <div class="space-y-5 self-center grid-rows-1">
+
+
+  <div class="space-y-5 self-center lg:order-5">
     <h3 class="text-6xl">Feather Brows</h3>
     <h5 class="text-2xl">Front Strokes & Shading</h3>
-    <ul class="marker:text-[#83B197]  lg:list-disc">
+    <ul class="marker:text-secondary list-disc">
         <li>
           Includes front hair strokes in the brows with shading added all throughout the brows | Shading can be customized for a natural / natural makeup / makeup look ️        </li>
         <li>
@@ -116,43 +127,49 @@ import arrowRight from '@assets/icons/arrow-right.svg'
         </li> 
     </ul>
   </div>
+    <div class="leaf-image-container mx-auto">
+      <Image
+        src={featherBrows}
+        alt="Artist Nancy Lin microblading a female client"
+      />
+    </div>
  
-</section>
 
-<section class="section  ">
-  <div class="grid lg:grid-cols-2  gap-20 service-bg p-16">
-  <div class="space-y-5 self-center grid-rows-1">
-    <h3 class="text-6xl">Nana's Signature</h3>
-    <h5 class="text-2xl">Feather Brows</h3>
-    <ul class="marker:text-[#83B197]  lg:list-disc">
-        <li>
-          A combination of microblading and shading throughout the entire whole brow areas for the fluffiest look
-          </li>
-                  <li>
-                    This is ideal for those with normal-dry skin with decent amount of hair flow
-                </li>
-       <li>
-          Procedure may take up to 4.5 hours and includes a free consultation of assessing the right color and brow shape for you | The bulk of the procedure time is dedicated to making sure you're 100% happy with the brow shape before moving onto the actual procedure    
-             </li>
-        <li>
-          This does not include the initial touch-up which is booked separately    
-        </li> 
-    </ul>
-    <div class="py-6 w-1/2">
-      <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
-        <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-<img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-    </a>
+  <div class="grid lg:grid-cols-2 grid-cols-1 col-span-1 lg:col-span-2 gap-20 service-bg p-16 lg:order-10">
+    <div class="space-y-5 self-center ">
+      <h3 class="text-6xl">Nana's Signature</h3>
+      <h5 class="text-2xl">Feather Brows</h3>
+      <ul class="marker:text-secondary  list-disc">
+          <li>
+            A combination of microblading and shading throughout the entire whole brow areas for the fluffiest look
+            </li>
+                    <li>
+                      This is ideal for those with normal-dry skin with decent amount of hair flow
+                  </li>
+         <li>
+            Procedure may take up to 4.5 hours and includes a free consultation of assessing the right color and brow shape for you | The bulk of the procedure time is dedicated to making sure you're 100% happy with the brow shape before moving onto the actual procedure    
+               </li>
+          <li>
+            This does not include the initial touch-up which is booked separately    
+          </li> 
+      </ul>
+      <div class="py-6 w-1/2">
+        <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
+          <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+  <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+      </a>
+      </div>
+    </div>
+    <div class="leaf-image-container grid-rows-2 mx-auto">
+      <Image
+        src={nanasign}
+        alt="Artist Nancy Lin microblading a female client"
+      />
     </div>
   </div>
-  <div class="leaf-image-container grid-rows-2">
-    <Image
-      src={nanasign}
-      alt="Artist Nancy Lin microblading a female client"
-    />
-  </div>
-</div>
+
 </section>
+
 <style>
   .service-bg {
     background: linear-gradient(135deg, #F5EBEA 0%, #FFFDFD 22.40%, #F5EBEA 100%);
@@ -160,7 +177,6 @@ import arrowRight from '@assets/icons/arrow-right.svg'
 border: 1px solid #8F7880;
   },
   .banner-bg {
-    border-radius: 10px;
 background: #F5EBEA;
   }
 </style>
