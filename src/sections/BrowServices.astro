@@ -10,9 +10,9 @@ import { params } from "@config/config.json"
 import { Image } from "astro:assets"
 ---
 
-  
-<div class="grid grid-cols-12 gap-20">
-  <div class="space-y-5 row-[1_/_span_2] col-[1_/_span_12] md:col-[3_/_span_7]  rounded-lg self-center  relative  banner-bg p-28">
+<main>
+<div class="grid grid-cols-12 gap-20 ">
+  <div class="space-y-5 row-[1_/_span_2] col-[1_/_span_12] xl:col-[2_/_span_9]  rounded-lg self-center  relative  banner-bg p-28">
     <h3 class="text-6xl">Welcome
       <br />
       Lovelies!
@@ -33,7 +33,7 @@ import { Image } from "astro:assets"
   
   <div class="row-[1_/_span_2] -z-10 col-[1_/_span_12] ml-auto md:col-[6_/_span_12]">
     <Image
-    class='blur-sm lg:blur-none object-fill'
+    class='blur-sm md:blur-none object-fill'
       src={serviceHero}
       alt="Banner image"
     /> 
@@ -45,7 +45,7 @@ import { Image } from "astro:assets"
 <h3 class="text-dark mt-20 text-center text-6xl">Brow Services</h3>
 
 <section class="section grid grid-cols-1 lg:grid-cols-2  gap-20">
-  <div class="space-y-5 self-center">
+  <div class="space-y-5 self-center px-20 lg:px-5">
     <h3 class="text-6xl">Microblading</h3>
     <h5 class="text-2xl">Strokes Only | Only by Request</h3>
     <ul class="marker:text-secondary list-disc">
@@ -69,18 +69,20 @@ import { Image } from "astro:assets"
         </li>
     </ul>
   </div>
-    <div class="leaf-image-container mx-auto col-span-1 lg:-order-1 ">
+    <div class="leaf-image-container mx-auto col-span-1 self-center lg:-order-1 ">
       <Image
         src={microblading}
         alt="Artist Nancy Lin microblading a female client"
       />
     </div>
+</section>
 
 
-  <div class="space-y-5 self-center ">
+<section class="section grid grid-cols-1 lg:grid-cols-2  gap-20">
+  <div class="space-y-5 self-center px-20 lg:px-5">
     <h3 class="text-6xl">Microshading</h3>
     <h5 class="text-2xl">Shading Only</h3>
-    <ul class="marker:text-secondary list-disc">
+    <ul class="marker:text-secondary list-disc ">
         <li>
           Microshading is 100% shading to resemble a natural, makeup look that creates an illusion of depth and an ombre effect | Clients can also request a natural look to a dramatic makeup look with Microshading 
         </li>
@@ -97,16 +99,19 @@ import { Image } from "astro:assets"
         </li> 
     </ul>
   </div>
-  <div class="leaf-image-container  mx-auto">
+  <div class="leaf-image-container  self-center mx-auto">
     <Image
       src={microshading}
       alt="Artist Nancy Lin microblading a female client"
     />
   </div>
 
+</section>
 
 
-  <div class="space-y-5 self-center lg:order-5">
+<section class="section grid grid-cols-1 lg:grid-cols-2  gap-20">
+
+  <div class="space-y-5 self-center lg:order-5 px-20 lg:px-5">
     <h3 class="text-6xl">Feather Brows</h3>
     <h5 class="text-2xl">Front Strokes & Shading</h3>
     <ul class="marker:text-secondary list-disc">
@@ -127,12 +132,16 @@ import { Image } from "astro:assets"
         </li> 
     </ul>
   </div>
-    <div class="leaf-image-container mx-auto">
+    <div class="leaf-image-container self-center mx-auto">
       <Image
         src={featherBrows}
         alt="Artist Nancy Lin microblading a female client"
       />
     </div>
+  </section>
+
+
+  <section class="section grid grid-cols-1 lg:grid-cols-2  gap-20">
  
 
   <div class="grid lg:grid-cols-2 grid-cols-1 col-span-1 lg:col-span-2 gap-20 service-bg p-16 lg:order-10">
@@ -160,7 +169,7 @@ import { Image } from "astro:assets"
       </a>
       </div>
     </div>
-    <div class="leaf-image-container grid-rows-2 mx-auto">
+    <div class="leaf-image-container self-center grid-rows-2 mx-auto">
       <Image
         src={nanasign}
         alt="Artist Nancy Lin microblading a female client"
@@ -169,6 +178,7 @@ import { Image } from "astro:assets"
   </div>
 
 </section>
+</main>
 
 <style>
   .service-bg {
