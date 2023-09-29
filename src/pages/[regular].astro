@@ -30,7 +30,6 @@ const { title, meta_title, description, image } = page.data
   description={description}
   image={image?.src}
 >
-    <!-- <Header pathName={Astro.url.pathname} client:load /> -->
-    <Header client:load />
+    <Header />
   <Default data={page} />
 </Base>

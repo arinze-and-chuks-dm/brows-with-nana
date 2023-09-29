@@ -11,7 +11,7 @@ import Header from '@components/Header.astro'
 ---
 
 <Base title={title} image={image?.src} >
-  <Header client:load />
+  <Header />
   {image ? (
     <Image src={image.src} alt={image.alt} />
 ) : null}
@@ -47,9 +47,9 @@ import Header from '@components/Header.astro'
               </dl>
       ))}
       </div>
-      <a role="button" href="/" class="group btn mt-10 w-full flex justify-between items-center">
+      <a role="button" href="/policy-and-guidelines" class="group btn mt-10 w-full flex justify-between items-center">
         <span>Check Policies and Guidelines</span>
-        <img class="group-hover:animate-shake" src={arrowRight.src} alt={''}  />
+        <img class="group-hover:animate-shake" src={arrowRight.src} alt={'right arrow'}  />
       </a>
     </main>
 </Base>

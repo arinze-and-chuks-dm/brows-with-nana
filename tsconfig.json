@@ -14,7 +14,8 @@
       "@sections/*": ["./src/sections/*"],
       "@lib/*": ["./src/lib/*"],
       "@styles/*": ["./src/styles/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@public/*": ["./public/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

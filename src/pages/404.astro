@@ -10,12 +10,12 @@ const {
 ---
 
 <Base title='404' description='404 page'>
-    <Header  client:load />
+    <Header />
   <main>
 
     <div class="section">
       <div class="flex flex-shrink-0 justify-center">
-        <a href="/" class="inline-flex">
+        <a href="/" aria-label="home" class="inline-flex">
           <span class="sr-only">{logo_text}</span>
           <img class="w-auto h-32" src={leaf.src} alt="">
         </a>
@@ -26,7 +26,7 @@ const {
           <h1 class="font-bold sm:text-5xl">Page not found.</h1>
           <p class="text-bas">Sorry, we couldn’t find the page you’re looking for.</p>
           <div class="mt-6">
-            <a role="button" href="/"  class="group btn inline-flex relative items-center">
+            <a role="button" href="/" aria-label="home" class="group btn inline-flex relative items-center">
               <span class="transform transition ease-in-out group-hover:-translate-x-5">Home</span>
               <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
             </a>

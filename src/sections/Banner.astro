@@ -7,7 +7,7 @@ import { Image } from 'astro:assets'
 ---
 
 <div class="banner-bg min-h-screen space-y-10">
-  <Header  client:load />
+  <Header />
   <div
     class="mx-auto grid grid-cols-1 md:gap-y-5 lg:grid-cols-12 gap-y-10 section-padding-x"
   >
@@ -16,11 +16,11 @@ import { Image } from 'astro:assets'
       <p class="font-secondary italic font-extralight text-lg md:w-2/3">
         Enhance Your Beauty, Frame Your Confidence: Flawless Brows by Experts
       </p>
-      <a role="button" href={params.booking_url}  class="group justify-center btn inline-flex relative items-center">
-        <span class="transform transition ease-in-out group-hover:-translate-x-5">Schedule an appointments</span>
-        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+      <a role="button" href={params.booking_url} target="_blank" rel="nofollow"  class="group justify-center btn inline-flex relative items-center">
+        <span class="transform transition ease-in-out group-hover:-translate-x-5">Schedule an appointment</span>
+        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'brows with nana modal'}  />
       </a>
     </div>
-      <Image loading='eager' class="col-span-7" src={heroGirl} alt="" />
+      <Image loading='eager' class="col-span-7" src={heroGirl} aria-hidden alt="" />
   </div>
 </div>

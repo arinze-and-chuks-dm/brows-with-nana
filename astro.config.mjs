@@ -1,17 +1,19 @@
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
-import { defineConfig } from "astro/config"
+import Compress from "astro-compress"
+import { defineConfig, sharpImageService } from "astro/config"
 import config from "./src/config/config.json"
 
 
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ?? "https://browswithnana.com",
-  experimental: {
-    assets: true,
-  },
   base: config.site.base_path ?? "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
+  image: {
+    service: sharpImageService(),
+    domains: ["astro.build"],
+  },
   integrations: [
     sitemap(),
     tailwind({
@@ -19,9 +21,7 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    // image({
-    //   serviceEntryPoint: "@astrojs/image/sharp",
-    // }),
+    Compress(),
   ],
   markdown: {
     remarkPlugins: [],

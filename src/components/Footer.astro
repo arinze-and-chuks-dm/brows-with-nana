@@ -3,14 +3,9 @@ import email from '@assets/icons/email.svg'
 import facebook from '@assets/icons/facebook.svg'
 import instagram from '@assets/icons/instagram.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
-import phone from '@assets/icons/phone.svg'
-import twitter from '@assets/icons/twitter.svg'
-import youtube from '@assets/icons/youtube.svg'
 import config from '@config/config.json'
 import menu from '@config/menu.json'
 import { markdownify } from '@lib/utils/textConverter'
-import GetStartWithUs from '@sections/GetStartWithUs.astro'
-import Instagram from '@sections/Instagram.astro'
 import Logo from './Logo.astro'
 const {
   params,
@@ -21,14 +16,11 @@ const {
 const { main } = menu;
 const data =  [
     {text: contact_info.address, icon: locationIcon},
-    {text: contact_info.phone, icon: email},
-    {text: contact_info.email, icon: phone},
+    {text: contact_info.email, icon: email},
 ]
 const { title } = Astro.props
 const is404Page = title === '404'
 ---
-{!is404Page ? <Instagram /> : null}
-{['/contact'].includes(Astro.url.pathname) || is404Page ?  null : <GetStartWithUs  />}
 <footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto  pb-8 pt-16">
@@ -42,7 +34,7 @@ const is404Page = title === '404'
           {
             main.map((item) => (
               <li>
-                <a href="#" class="social-icons">
+                <a href={item.url} aria-label={item.name} class="social-icons">
                   {item.name}
                 </a>
               </li>
@@ -68,26 +60,17 @@ const is404Page = title === '404'
       <div class="col-span-1 space-y-5">
         <h3 class="text-sm font-semibold leading-6">About Us</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic velit
-              corporis vitae rerum doloribus aliquid ex id tenetur consequuntur,
-              ratione, perferendis fugiat quos, iusto natus voluptate inventore
-              est sapiente eaque?
+              We specialize in the precision artistry of microblading, crafting customized, naturally stunning eyebrows tailored to your unique features.
             </p>
       </div>
 
       <div class="col-span-1 space-y-5">
   <h3 class="text-sm font-semibold leading-6">Follow Us</h3>
 <div class="grid grid-cols-3 gap-y-10">
-  <a href="#" class="social-icons">
-    <img src={youtube.src} alt="youtube" />
-  </a>
-  <a href={social.facebook} class="social-icons">
+  <a href={social.facebook} aria-label='facebook' class="social-icons">
     <img src={facebook.src} alt="facebook" />
   </a>
-  <a href={social.twitter} class="social-icons">
-    <img src={twitter.src} alt="twitter" />
-  </a>
-  <a href={social.instagram} class="social-icons">
+  <a href={social.instagram} aria-label="instagram" class="social-icons">
     <img src={instagram.src} alt="instagram" />
   </a>
 </div>
