@@ -7,7 +7,11 @@
     {
       "name": "Services",
       "url": "/services"
-    }, 
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
     {
       "name": "FAQs",
       "url": "/frequently-asked-questions"

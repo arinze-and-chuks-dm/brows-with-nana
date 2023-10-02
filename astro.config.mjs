@@ -8,7 +8,7 @@ import config from "./src/config/config.json"
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ?? "https://browswithnana.com",
-  base: config.site.base_path ?? "/",
+  base: config.site.base_path ?? "https://browswithnana.com/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {
     service: sharpImageService(),

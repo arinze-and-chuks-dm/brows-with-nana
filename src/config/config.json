@@ -13,12 +13,11 @@
     "meta_description": "meta description"
   },
   "params": {
-    "contact_form_action": "#",
     "copyright": "© 2023 Brows with Nana. All rights reserved.",
     "booking_url": "https://bookhoshistudio.as.me/schedule.php?appointmentType=category%3ANancy"
   },
   "contact_info": {
-  "hours": "Monday - Friday: 8:30am - 7pm <br /> Saturday: 9am - 5pm <br/> Sunday: Closed",
+    "hours": "Monday - Friday: 8:30am - 7pm <br /> Saturday: 9am - 5pm <br/> Sunday: Closed",
     "address": "5480 FM 423 #2200 <br/> Frisco, TX 75036",
     "street": "5480 FM 423 #2200",
     "state": "TX",

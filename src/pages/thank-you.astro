@@ -1,0 +1,38 @@
+---
+import arrowRight from '@assets/icons/arrow-right.svg'
+import leaf from '@assets/icons/leaf-up.svg'
+import Header from '@components/Header.astro'
+import config from '@config/config.json'
+import Base from '@layouts/Base.astro'
+const {
+  site: { logo_text} = {}
+} = config;
+---
+
+<Base title='Thank you' description='Thank you page'>
+    <Header />
+  <main>
+
+    <div class="section">
+      <div class="flex flex-shrink-0 justify-center">
+        <a href="/" aria-label="home" class="inline-flex">
+          <span class="sr-only">{logo_text}</span>
+          <img class="w-auto h-32" src={leaf.src} alt="">
+        </a>
+      </div>
+      <div class="py-5">
+        <div class="text-center space-y-2">
+          <p class="font-semibold">Form submitted</p>
+          <h1 class="font-bold sm:text-5xl">Thank You!</h1>
+          <p class="text-bas">Thank you for contacting us! We will be in touch with you shortly.</p>
+          <div class="mt-6">
+            <a role="button" href="/" aria-label="home" class="group btn inline-flex relative items-center">
+              <span class="transform transition ease-in-out group-hover:-translate-x-5">Home</span>
+              <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>
