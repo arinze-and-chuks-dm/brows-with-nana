@@ -8,7 +8,7 @@ draft: false
 
 A non-refundable deposit is required upon booking your appointment to secure your brow booking. This deposit goes towards your procedure cost. The remainder of the balance will be due at your appointment in cash/Venmo. Tips are not included, but are greatly appreciated.
 
-You must read ALL the Contraindications/Pre-care/Aftercare information in my [Read Before Booking](/read-before-booking) and ALL information on the [Policies/Covid Guidelines](/policy) pages BEFORE BOOKING.
+You must read ALL the Contraindications/Pre-care/Aftercare information in my [Read Before Booking](/read-before-booking) and ALL information on the [Policies/Covid Guidelines](/policy-and-guidelines) pages BEFORE BOOKING.
 
 If you are not sure of which style to pick, book any style for the time being and we can change it during our consultation on the day of your appointment.
 Please follow ALL Pre-care and Covid instructions before coming in to your appointment. If you come to your appointment and you are not suitable for the procedure, you will be charged HALF of the procedure and will need to reschedule.
