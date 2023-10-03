@@ -4,7 +4,7 @@ paths:
 collections_config:
   pages:
     path: src/content/pages
-    output: false
+    output: true
     icon: notes
     _editables: {}
     _inputs: {}
