@@ -1,0 +1,22 @@
+source: /src
+paths:
+  uploads: uploads
+collections_config:
+  pages:
+    path: src/content/pages
+    output: false
+    icon: notes
+    _editables: {}
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
+_inputs: {}
+_select_data: {}
+_structures: {}
+_editables: {}
+data_config: {}
+timezone: Etc/UTC
