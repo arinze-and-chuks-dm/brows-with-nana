@@ -22,7 +22,7 @@ const { title } = Astro.props
 const is404Page = title === '404'
 ---
 <footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <span id="footer-heading" class="sr-only">Footer</span>
   <div class="mx-auto  pb-8 pt-16">
     <div class="gap-y-10 gap-x-5 grid grid-cols-2 xl:grid-cols-5 xl:gap-8">
       <div class="col-span-2 md:col-span-1">
