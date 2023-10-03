@@ -36,8 +36,8 @@ export type NavLink = {
 
           <div class="space-y-5 px-10 justify-self-end">
             <p set:html={markdownify(contact_info.address)} />
-            <a href={params.booking_url}  role="button" class="group justify-center btn inline-flex relative items-center text-dark bg-primary border-primary">
-              <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
+            <a href={contact_info.google_maps} aria-label="view on map" target="_blank" rel="nofollow"   role="button" class="group justify-center btn inline-flex relative items-center text-dark bg-primary border-primary">
+              <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
               <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
 
             </a>
@@ -71,7 +71,7 @@ export type NavLink = {
             ))}
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a aria-label="book now"  role="button" href={params.booking_url} class="group btn-dark border-0 inline-flex relative items-center">
+            <a aria-label="book now" target="_blank" rel="nofollow"  role="button" href={params.booking_url} class="group btn-dark border-0 inline-flex relative items-center">
               <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
   <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
           </a>
@@ -106,7 +106,7 @@ export type NavLink = {
                   ))}
                 </div>
                 <div class="py-6">
-                  <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
+                  <a  role="button" href={params.booking_url} target="_blank" rel="nofollow"  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
                     <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
         <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
                 </a>

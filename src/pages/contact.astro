@@ -16,7 +16,6 @@ const data =  [
     {text: contact_info.email, icon: email},
 ]
 
-const baseUrl = import.meta.env.BASE_URL
 ---
 
 <Base title={'Contact'} image={contactImg} >
@@ -46,7 +45,7 @@ const baseUrl = import.meta.env.BASE_URL
     </ul>
     </div>
     
-      <a role="button" href=""  class="group btn inline-flex relative justify-center items-center">
+      <a role="button" href={contact_info.google_maps} target="_blank" rel="nofollow"  class="group btn inline-flex relative justify-center items-center">
           <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
           <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
       </a>
@@ -58,7 +57,7 @@ const baseUrl = import.meta.env.BASE_URL
       <input type="text" name="_honey" class="hidden">
       <input type="hidden" name="_autoresponse" value="Thank you for contacting browswithnana! We will be in touch with you shortly.">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value={`${baseUrl}/thank-you`}>
+      <input type="hidden" name="_next" value={`${Astro.url.origin}/thank-you`}>
       <input type="hidden" name="_subject" value="Contact browswithnana.com">
       <form action="https://formsubmit.co/no-reply@browswithnana.com" method="POST" />
 

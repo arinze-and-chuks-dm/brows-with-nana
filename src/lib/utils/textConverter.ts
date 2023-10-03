@@ -1,5 +1,5 @@
-import { slug } from 'github-slugger';
-import { marked } from "marked";
+import { slug } from 'github-slugger'
+import { marked } from "marked"
 
 // slugify
 export const slugify = (content: string) => {
@@ -12,6 +12,7 @@ export const slugify = (content: string) => {
 export const markdownify = (content: string) => {
   if (!content) return null;
 
+  marked.use({ silent: true })
   return marked.parseInline(content);
 };
 

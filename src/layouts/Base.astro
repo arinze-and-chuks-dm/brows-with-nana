@@ -19,7 +19,7 @@ const pf = theme.fonts.font_family.primary;
 const sf = theme.fonts.font_family.secondary;
 const tf = theme.fonts.font_family.tertiary;
 
-const { title, meta_title, description, image, noindex, canonical } =
+const { title, meta_title, description, image, noindex, canonical = Astro.url.href } =
   Astro.props;
 ---
 

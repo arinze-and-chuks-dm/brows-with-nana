@@ -25,8 +25,8 @@ import { Image } from "astro:assets"
     </p>
 
     <img class="absolute bottom-0 right-0" src={longLeaf.src} alt={''}  />
-    <a role="button" href="/services" class="group btn inline-flex relative justify-center items-center">
-      <span class="transform transition ease-in-out group-hover:-translate-x-5">View Services</span>
+    <a role="button" href={params.booking_url} target="_blank" rel="nofollow" class="group btn inline-flex relative justify-center items-center">
+      <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
       <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
     </a>
   </div>
@@ -163,7 +163,7 @@ import { Image } from "astro:assets"
           </li> 
       </ul>
       <div class="py-6 w-1/2">
-        <a  role="button" href={params.booking_url}  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
+        <a  role="button" href={params.booking_url} target="_blank" rel="nofollow"  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
           <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
   <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
       </a>
