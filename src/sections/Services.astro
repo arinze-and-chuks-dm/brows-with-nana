@@ -3,6 +3,8 @@ import featherBrows from '@assets/icons/serv-feather-brows.svg'
 import microblading from '@assets/icons/serv-microblading.svg'
 import microshading from '@assets/icons/serv-microshading.svg'
 import nanasSignature from '@assets/icons/serv-nanas-signature.svg'
+import LinkButton from '@components/LinkButton.astro'
+import { main } from '@config/menu.json'
 const services = [
   {
     title: 'Microblading',
@@ -29,11 +31,11 @@ const services = [
 
 ---
 
-<section class="section-colored section-padding-y">
-  <div class="mx-auto max-w-xl lg:max-w-none space-y-24">
+<section class="section-colored space-y-10">
+  <div class="max-w-xl lg:max-w-none space-y-24 flex flex-col ">
     <h3 class="text-dark text-center text-6xl">Our Services</h3>
     <div
-      class="mx-auto grid max-w-sm md:grid-cols-2 gap-x-8 gap-y-10 sm:max-w-none lg:grid-cols-4"
+      class="grid max-w-sm md:grid-cols-2 gap-x-8 gap-y-10 sm:max-w-none lg:grid-cols-4"
     >
       {
         services.map((service) => (
@@ -53,5 +55,6 @@ const services = [
         ))
       }
     </div>
+    <LinkButton className=' self-center'  text='Learn More' href={main.Services} />
   </div>
 </section>

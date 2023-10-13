@@ -1,57 +1,55 @@
 ---
 
 import arrowRight from '@assets/icons/arrow-right.svg'
-import testimonialImage1 from '@assets/images/testimonial-1.png'
-import testimonialImage2 from '@assets/images/testimonial-2.png'
-import testimonialImage3 from '@assets/images/testimonial-3.png'
+import vid1 from '@assets/videos/vid-1.mp4'
+import vid2 from '@assets/videos/vid-2.mp4'
+import vid3 from '@assets/videos/vid-3.mp4'
 import { contact_info } from "@config/config.json"
-import { Image } from "astro:assets"
 const testimonials = [
   {
     name: 'Lara R',
-    image: {
-      src: testimonialImage1,
+    video: {
+      src: vid2,
       alt: 'Lara R microblading client',
     },
     text: 'Nancy is the BEST!  She took her time as I have "mature" skin and did an awesome job.  They are exactly how I wanted them shaped and filled in.  She is a true artist and pleasant as well.',
   },
   {
     name: 'Angeline Adams',
-    image: {
-      src: testimonialImage2,
+    video: {
+      src: vid1,
       alt: 'Angeline Adams microblading client',
     },
     text: 'Nancy is very sweet, knowledgeable, and professional. She spent the time to make sure we were on the same page with what I wanted/what works with my face, educated me throughout the whole process, and provided me with everything I need in order for the best results!',
   },
   {
     name: 'Jessica Yi',
-    image: {
-      src: testimonialImage3,
+    video: {
+      src: vid3,
       alt: 'Jessica Yi microblading client',
     },
     text: 'Nancy is the best. I received a referral from one of her clients. I was a bit nervous trying out a new person, but Nancy calmed me down with her calm and sweet personality.',
   },
-];
+]
 ---
 
 <section class="section-colored space-y-10 flex items-center flex-col">
   <h3 class="text-center text-6xl ">Hear from Our Clients</h3>
   <ul role="list" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {
-      testimonials.map(({ image, text, name }) => (
+      testimonials.map(({ video, text, name }) => (
         <li class="col-span-1 flex flex-col bg-white text-center shadow">
           <div class="flex flex-1 flex-col bg-primary">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              class="w-full h-80 object-fill"
-            />
+            <video class="h-80 bg-black" height="200" controls muted>
+              <source src={video.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div>
             <div class=" p-9 text-center space-y-5">
               <h4 class="text-dark text-2xl font-bold">{name}</h4>
-              <p class=" line-clamp-3" >{text}</p>
+              <p class="line-clamp-3" >"{text}"</p>
             </div>
           </div>
         </li>

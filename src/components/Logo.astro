@@ -2,6 +2,7 @@
 
 import logo from "@assets/icons/brows-with-nana-logo.svg"
 import { site } from "@config/config.json"
+import { main } from "@config/menu.json"
 
 const {
   logo_text,
@@ -9,7 +10,7 @@ const {
 } = site;
 ---
 
-  <a href="/" aria-label="home" class="font-logo text-black text-3xl animate-fade">
+  <a href={main.Home} aria-label="home" class="font-logo text-black text-3xl animate-fade">
     <span class="sr-only">{logo_text}</span>
       <img
         src={logo.src}

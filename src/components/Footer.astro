@@ -12,11 +12,12 @@ const {
   contact_info,
   social
 } = config;
+const GOOGLE_MAPS_API_KEY = import.meta.env.GOOGLE_MAPS_API_KEY;
 
 const { main } = menu;
 const data =  [
-    {text: contact_info.address, icon: locationIcon},
-    {text: contact_info.email, icon: email},
+    {text: contact_info.address, icon: locationIcon, alt: 'location'},
+    {text: contact_info.email, icon: email, alt: 'email'},
 ]
 const { title } = Astro.props
 const is404Page = title === '404'
@@ -24,32 +25,31 @@ const is404Page = title === '404'
 <footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <span id="footer-heading" class="sr-only">Footer</span>
   <div class="mx-auto  pb-8 pt-16">
-    <div class="gap-y-10 gap-x-5 grid grid-cols-2 xl:grid-cols-5 xl:gap-8">
-      <div class="col-span-2 md:col-span-1">
+    <div class="gap-y-10 gap-x-5 grid grid-cols-2 xl:grid-cols-12 xl:gap-8">
+      <div class="col-span-2 md:col-span-2">
         <Logo />
       </div>
       <div class="col-span-1 space-y-5">
         <h3 class="text-sm font-semibold leading-6">Links</h3>
         <ul role="list" class="mt-6 space-y-4">
           {
-            main.map((item) => (
+            Object.entries(main).map(([name, url]) => (
               <li>
-                <a href={item.url} aria-label={item.name} class="social-icons">
-                  {item.name}
+                <a href={url} aria-label={name} class="social-icons">
+                  {name}
                 </a>
               </li>
             ))
           }
         </ul>
       </div>
-      <div class="col-span-1 space-y-5">
+      <div class="col-span-3 space-y-5">
         <h3 class="text-sm font-semibold leading-6">Contact Us</h3>
         <div>
-
           <ul class="space-y-5">
             {data.map(item => (
                 <li class="flex space-x-2">
-                    <img class="self-start"   src={item.icon.src} alt="location icon" />
+                    <img class="self-start" src={item.icon.src} alt={item.alt} />
                     <span set:html={markdownify(item.text)} />
                 </li>
 
@@ -57,23 +57,27 @@ const is404Page = title === '404'
         </ul>
         </div>
       </div>
-      <div class="col-span-1 space-y-5">
-        <h3 class="text-sm font-semibold leading-6">About Us</h3>
-            <p>
-              We specialize in the precision artistry of microblading, crafting customized, naturally stunning eyebrows tailored to your unique features.
-            </p>
-      </div>
 
-      <div class="col-span-1 space-y-5">
-  <h3 class="text-sm font-semibold leading-6">Follow Us</h3>
-<div class="grid grid-cols-3 gap-y-10">
-  <a href={social.facebook} aria-label='facebook' target="_blank" rel="nofollow" class="social-icons">
-    <img src={facebook.src} alt="facebook" />
-  </a>
-  <a href={social.instagram} aria-label="instagram" target="_blank" rel="nofollow" class="social-icons">
-    <img src={instagram.src} alt="instagram" />
-  </a>
-</div>
+      <div class="col-span-2 space-y-5">
+        <h3 class="text-sm font-semibold leading-6">Follow Us</h3>
+      <div class="grid grid-cols-3 gap-y-10">
+        <a href={social.facebook} aria-label='facebook' target="_blank" rel="nofollow" class="social-icons">
+          <img src={facebook.src} alt="facebook" />
+        </a>
+        <a href={social.instagram} aria-label="instagram" target="_blank" rel="nofollow" class="social-icons">
+          <img src={instagram.src} alt="instagram" />
+        </a>
+      </div>
+      </div>
+      <div class="col-span-4 space-y-5">
+        <iframe
+          class="w-full h-96"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps/embed/v1/place?q=Hoshi+Studio,+Farm+to+Market+Road+423+%232200,+Frisco,+TX&key=${GOOGLE_MAPS_API_KEY}
+            `}>
+          </iframe>
       </div>
 
     </div>
