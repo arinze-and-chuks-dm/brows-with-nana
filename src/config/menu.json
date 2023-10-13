@@ -1,20 +1,11 @@
 {
-  "main": [
-    {
-      "name": "Home",
-      "url": "/"
-    },
-    {
-      "name": "Services",
-      "url": "/services"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "FAQs",
-      "url": "/frequently-asked-questions"
-    }
-  ]
+  "main": {
+    "Home": "/",
+    "Services": "/services",
+    "Contact": "/contact",
+    "FAQs": "/frequently-asked-questions"
+  }, 
+  "secondary": {
+    "Policy And Guidlines": "/policy-and-guidelines"
+  }
 }

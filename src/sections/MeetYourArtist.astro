@@ -1,5 +1,5 @@
 ---
-import meetYourArtist from '@assets/images/meet-your-artist.jpg'
+import meetYourArtist from '@assets/images/nancy-potrait.jpeg'
 import { Image } from "astro:assets"
 ---
 
@@ -18,8 +18,10 @@ import { Image } from "astro:assets"
   </div>
   <div class="leaf-image-container mx-auto grid-rows-2 lg:-order-1">
     <Image
+      width={550}
       src={meetYourArtist}
       alt="Artist Nancy Lin microblading a female client"
+      class="aspect-square object-cover object-top rounded-lg"
     />
   </div>
 </section>

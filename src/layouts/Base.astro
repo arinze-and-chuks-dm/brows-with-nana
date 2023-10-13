@@ -123,10 +123,8 @@ const { title, meta_title, description, image, noindex, canonical = Astro.url.hr
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
-  <body class="grid min-h-screen grid-rows-[1fr_auto]">
-    <div class="space-y-10">
-      <slot />
-    </div>
+  <body>
+    <slot />
     <Footer title={title} />
   </body>
 </html>

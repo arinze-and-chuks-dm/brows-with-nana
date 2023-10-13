@@ -8,6 +8,7 @@ import { Image } from 'astro:assets'
 import { markdownify } from '@lib/utils/textConverter'
 import arrowRight from '@assets/icons/arrow-right.svg'
 import Header from '@components/Header.astro'
+import { secondary } from '@config/menu.json'
 ---
 
 <Base title={title} image={image?.src} >
@@ -47,7 +48,7 @@ import Header from '@components/Header.astro'
               </dl>
       ))}
       </div>
-      <a role="button" href="/policy-and-guidelines" class="group btn mt-10 w-full flex justify-between items-center">
+      <a role="button" href={secondary['Policy And Guidlines']} class="group btn mt-10 w-full flex justify-between items-center">
         <span>Check Policies and Guidelines</span>
         <img class="group-hover:animate-shake" src={arrowRight.src} alt={'right arrow'}  />
       </a>

@@ -1,33 +1,24 @@
 ---
 import chevronDownIcon from '@assets/icons/chevron-down.svg'
 import locationPinIcon from '@assets/icons/location-pin.svg'
-import arrowRight from '@assets/icons/arrow-right.svg'
 import menu from "@config/menu.json"
-import { contact_info, site, params } from "@config/config.json"
+import { contact_info, site } from "@config/config.json"
 import Logo from './Logo.astro'
 import { markdownify } from '@lib/utils/textConverter'
+import LinkButton from '@components/LinkButton.astro'
+import CTA from '@components/CTA.astro'
 const { pathname } = Astro.url
-const { main }: { main: Array<NavLink> } = menu;
-
-
-export type NavLink = {
-  name: string;
-  url: string;
-  children?: NavLink[];
-};
+const { main } = menu;
 ---
 
-<header class="inset-x-0 space-y-5">
+<header class="inset-x-0 space-y-5 z-10">
         <!-- store info -->
       <div class="relative z-50 shadow ">
         <!-- button -->
-        <button  id="location-dropdown-btn" aria-controls="location-dropdown-content" class="bg-[#8F7883] w-full text-xl text-white flex flex-col sm:flex-row sm:justify-between sm:h-12 items-center py-1 section-padding-x">
-          <div class="flex justify-center space-x-1">
+        <button  id="location-dropdown-btn" aria-controls="location-dropdown-content" class="bg-dark w-full text-xl text-white flex items-center justify-end sm:h-12 py-1 section-padding-x">
+          <div  class="flex items-center space-x-1">
             <img src={locationPinIcon.src} alt="location pin" />
             <span set:html={markdownify(contact_info.city)} />
-          </div>
-          <div  class="flex items-center space-x-1">
-            <span>Location</span>
             <img src={chevronDownIcon.src} alt="down arrow" />
           </div>
         </button>
@@ -36,11 +27,7 @@ export type NavLink = {
 
           <div class="space-y-5 px-10 justify-self-end">
             <p set:html={markdownify(contact_info.address)} />
-            <a href={contact_info.google_maps} aria-label="view on map" target="_blank" rel="nofollow"   role="button" class="group justify-center btn inline-flex relative items-center text-dark bg-primary border-primary">
-              <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
-              <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
-
-            </a>
+            <LinkButton text='View On Map' className=' bg-primary' external href={contact_info.google_maps} />
           </div>
 
           <p class="px-10" set:html={markdownify(contact_info.hours)} />
@@ -60,28 +47,25 @@ export type NavLink = {
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            {main.map((item) => (
+            {Object.entries(main).map(([name, url]) => (
               <a
-              aria-label={item.name}
-                href={item.url}
-                class:list={['leading-6 hover:text-secondary', { 'text-secondary': item.url === pathname }]}
+              aria-label={name}
+                href={url}
+                class:list={['leading-6 hover:text-secondary', { 'text-secondary': url === pathname }]}
               >
-                {item.name}
+                {name}
               </a>
             ))}
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a aria-label="book now" target="_blank" rel="nofollow"  role="button" href={params.booking_url} class="group btn-dark border-0 inline-flex relative items-center">
-              <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-  <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
-          </a>
+          <CTA />
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
         <div id="mobile-menu" class="hidden" role="dialog" aria-modal="true">
           <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-10"></div>
-          <div class="pt-16 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="pt-16 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white section sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
               <Logo />
               <button id="close-mobile-menu-btn" type="button" class="-m-2.5 rounded-md p-2.5">
@@ -94,22 +78,19 @@ export type NavLink = {
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-dark">
                 <div class="space-y-2 py-6">
-                  <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base italic font-semibold leading-7  hover:text-secondary" set:html={markdownify(site.title)} />
-                  {main.map((item) => (
+                  <a href={main.Home} class="-mx-3 block rounded-lg px-3 py-2 text-base italic font-semibold leading-7  hover:text-secondary" set:html={markdownify(site.title)} />
+                  {Object.entries(main).map(([name, url]) => (
                     <a
-                    aria-label={item.name}
-                      href={item.url}
-                      class:list={['leading-6 block hover:text-secondary', { 'text-secondary': item.url === pathname }]}
+                    aria-label={name}
+                      href={url}
+                      class:list={['leading-6 block hover:text-secondary', { 'text-secondary': url === pathname }]}
                     >
-                      {item.name}
+                      {name}
                     </a>
                   ))}
                 </div>
                 <div class="py-6">
-                  <a  role="button" href={params.booking_url} target="_blank" rel="nofollow"  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
-                    <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
-                </a>
+                  <CTA />
                 </div>
                 
               </div>

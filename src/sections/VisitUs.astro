@@ -1,8 +1,8 @@
 ---
-import arrowRight from '@assets/icons/arrow-right.svg'
 import email from '@assets/icons/email.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
-import visitUsImage from '@assets/images/visit-us.jpg'
+import hoshiStudio from '@assets/images/hoshi-studio.jpg'
+import LinkButton from '@components/LinkButton.astro'
 import config from '@config/config.json'
 import { markdownify } from '@lib/utils/textConverter'
 import { Image } from 'astro:assets'
@@ -28,13 +28,15 @@ const data =  [
 
             ))}
         </ul>
-        <a href={contact_info.google_maps} target="_blank" rel="nofollow" role="button"  class="group btn inline-flex relative justify-center items-center">
-            <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
-            <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-        </a>
+        <LinkButton href={contact_info.google_maps} external text='View On Map' />
         </div>
     </div>
     <div class="leaf-image-container mx-auto">
-      <Image class="object-full col-span-8 self-end " src={visitUsImage} alt="Brows by nana studio" />
+      <Image
+      width={550}
+      src={hoshiStudio}
+      alt="microblading salon seat in studio"
+      class="aspect-square object-cover object-center rounded-lg"
+    />
     </div>
 </section>
