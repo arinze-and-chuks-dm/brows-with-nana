@@ -1,6 +1,7 @@
 ---
 
 import arrowRight from '@assets/icons/arrow-right.svg'
+import { params } from "@config/config.json"
 import type { HTMLAttributes } from "astro/types"
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 const { external = true, className, text = 'Book Now', ...rest } = Astro.props
 ---
 
-  <a role="button" aria-label={text} {...rest} {...external ? {'target': '_blank', 'rel': 'nofollow'} : {}} class:list={["group btn-dark border-0 inline-flex relative justify-center items-center", className]}>
+  <a role="button" href={params.booking_url} aria-label={text} target="_blank" rel="nofollow" {...rest} class:list={["group btn-dark border-0 inline-flex relative justify-center items-center", className]}>
     <span class="transform transition ease-in-out group-hover:-translate-x-5">{text}</span>
   <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={'right arrow'}  />
 </a>

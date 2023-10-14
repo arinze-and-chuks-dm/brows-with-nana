@@ -8,7 +8,7 @@
 
 // section style
 .section {
-  @apply section-padding-x section-padding-y ;
+  @apply section-padding-x section-padding-y;
 }
 
 .section-colored {
@@ -58,7 +58,7 @@
 }
 
 .social-icons {
-  @apply text-sm leading-6 transition ease-in-out hover:scale-125 w-fit
+  @apply text-sm leading-6 transition ease-in-out hover:scale-125 hover:rotate-12 w-fit
 }
 
 .banner-bg {

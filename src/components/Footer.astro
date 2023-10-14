@@ -6,6 +6,7 @@ import locationIcon from '@assets/icons/location-pin-dark.svg'
 import config from '@config/config.json'
 import menu from '@config/menu.json'
 import { markdownify } from '@lib/utils/textConverter'
+import GetStartWithUs from '@sections/GetStartWithUs.astro'
 import Logo from './Logo.astro'
 const {
   params,
@@ -20,11 +21,14 @@ const data =  [
     {text: contact_info.email, icon: email, alt: 'email'},
 ]
 const { title } = Astro.props
+const { pathname } = Astro.url
 const is404Page = title === '404'
 ---
-<footer class:list={['section', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
+
+{![main.Contact].includes(pathname) ? <GetStartWithUs /> : null}
+<footer class:list={['section-padding-x pb-5', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <span id="footer-heading" class="sr-only">Footer</span>
-  <div class="mx-auto  pb-8 pt-16">
+  <div class="mx-auto pt-16">
     <div class="gap-y-10 gap-x-5 grid grid-cols-2 xl:grid-cols-12 xl:gap-8">
       <div class="col-span-2 md:col-span-2">
         <Logo />
