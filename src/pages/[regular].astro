@@ -21,13 +21,14 @@ type Props  ={
   page: CollectionEntry<"pages">
 }
 const { page } = Astro.props
-const { title, meta_title, description, image } = page.data
+const { title, meta_title, description, image, noindex } = page.data
 ---
 
 <Base
   title={title}
   meta_title={meta_title}
   description={description}
+  noIndex={noindex}
   image={image?.src}
 >
     <Header />

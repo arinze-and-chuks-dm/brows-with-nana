@@ -2,6 +2,7 @@
 title: "Read Before Booking"
 description: "Read Before Booking"
 draft: false
+noindex: true
 ---
 
 ### Semi-Permanent makeup is NOT recommended for clients with the following conditions:

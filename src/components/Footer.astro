@@ -21,11 +21,10 @@ const data =  [
     {text: contact_info.email, icon: email, alt: 'email'},
 ]
 const { title } = Astro.props
-const { pathname } = Astro.url
 const is404Page = title === '404'
 ---
 
-{![main.Contact].includes(pathname) ? <GetStartWithUs /> : null}
+{is404Page ? null : <GetStartWithUs />}
 <footer class:list={['section-padding-x pb-5', {'bg-primary text-dark': is404Page }]} aria-labelledby="footer-heading">
   <span id="footer-heading" class="sr-only">Footer</span>
   <div class="mx-auto pt-16">

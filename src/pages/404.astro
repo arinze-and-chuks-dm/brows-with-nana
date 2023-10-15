@@ -1,7 +1,7 @@
 ---
-import arrowRight from '@assets/icons/arrow-right.svg'
 import leaf from '@assets/icons/leaf-up.svg'
 import Header from '@components/Header.astro'
+import LinkButton from '@components/LinkButton.astro'
 import config from '@config/config.json'
 import { main } from '@config/menu.json'
 import Base from '@layouts/Base.astro'
@@ -10,7 +10,7 @@ const {
 } = config;
 ---
 
-<Base title='404' description='404 page'>
+<Base title='404' noindex description='404 page'>
     <Header />
   <main>
 
@@ -27,11 +27,9 @@ const {
           <h1 class="font-bold sm:text-5xl">Page not found.</h1>
           <p class="text-bas">Sorry, we couldn’t find the page you’re looking for.</p>
           <div class="mt-6">
-            <a role="button" href={main.Home} aria-label="home" class="group btn inline-flex relative items-center">
-              <span class="transform transition ease-in-out group-hover:-translate-x-5">Home</span>
-              <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-            </a>
-          </div>
+
+        <LinkButton text='Home' href={main.Home} />
+         </div>
         </div>
       </div>
     </div>

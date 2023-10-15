@@ -1,43 +1,14 @@
 ---
-import arrowRight from '@assets/icons/arrow-right.svg'
-import longLeaf from '@assets/icons/long-leaf.svg'
 import featherBrows from '@assets/images/featherbrows.png'
 import microblading from '@assets/images/microblading.png'
 import microshading from '@assets/images/microhading.png'
 import nanasign from '@assets/images/nanasign.png'
-import serviceHero from '@assets/images/servicesHero.png'
-import { params } from "@config/config.json"
+import CTA from '@components/CTA.astro'
 import { Image } from "astro:assets"
 ---
 
 <main>
-<div class="grid grid-cols-12 gap-20 ">
-  <div class="space-y-5 row-[1_/_span_2] col-[1_/_span_12] xl:col-[2_/_span_9]  rounded-lg self-center  relative  banner-bg p-28">
-    <h1 class="text-6xl">
-      Nanoblading services in Plano, TX and surrounding areas
-    </h1>
-    <p class="w-3/4">
-      Thank you for stopping by at Brows with Nana (aka Hoshi.Studio.Nana), a semi-permanent makeup boutique located in Plano, TX (NEW LOCATION AT HOSHI STUDIO IN FRISCO, TX!) specializing in the most trendy, state-of-the art, natural microblading and shading techniques to create the brows you've always dreamed of.
-      <br />
-      <br />
-      Let's bring some transformative luxury into your everyday life.
-    </p>
 
-    <img class="absolute bottom-0 right-0" src={longLeaf.src} alt={''}  />
-    <a role="button" href={params.booking_url} target="_blank" rel="nofollow" class="group btn inline-flex relative justify-center items-center">
-      <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-      <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-    </a>
-  </div>
-  
-  <div class="row-[1_/_span_2] -z-10 col-[1_/_span_12] ml-auto md:col-[6_/_span_12]">
-    <Image
-    class='blur-sm md:blur-none object-fill'
-      src={serviceHero}
-      alt="Banner image"
-    /> 
-  </div>
-</div>
 
 
 
@@ -162,10 +133,7 @@ import { Image } from "astro:assets"
           </li> 
       </ul>
       <div class="py-6 w-1/2">
-        <a  role="button" href={params.booking_url} target="_blank" rel="nofollow"  class="group btn-dark border-0 inline-flex w-full justify-center relative items-center">
-          <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-  <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-      </a>
+      <CTA />
       </div>
     </div>
     <div class="leaf-image-container self-center grid-rows-2 mx-auto">

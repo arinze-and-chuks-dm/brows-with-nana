@@ -2,6 +2,7 @@
 title: "Policy and Guidelines"
 description: "Policy and Guidelines"
 draft: false
+noindex: true
 ---
 
 #### Cancellations / Rescheduling

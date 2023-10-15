@@ -1,16 +1,17 @@
 ---
-import arrowRight from '@assets/icons/arrow-right.svg'
 import leaf from '@assets/icons/leaf-up.svg'
 import Header from '@components/Header.astro'
+import LinkButton from '@components/LinkButton.astro'
 import config from '@config/config.json'
 import { main } from "@config/menu.json"
 import Base from '@layouts/Base.astro'
 const {
   site: { logo_text} = {}
 } = config;
+// TODO: No Index this page
 ---
 
-<Base title='Thank you' description='Thank you page'>
+<Base title='Thank you' noindex description='Thank you page'>
     <Header />
   <main>
 
@@ -27,10 +28,7 @@ const {
           <h1 class="font-bold sm:text-5xl">Thank You!</h1>
           <p class="text-bas">Thank you for contacting us! We will be in touch with you shortly.</p>
           <div class="mt-6">
-            <a role="button" href={main.Home} aria-label="home" class="group btn inline-flex relative items-center">
-              <span class="transform transition ease-in-out group-hover:-translate-x-5">Home</span>
-              <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-            </a>
+            <LinkButton href={main.Home} text='Home' />
           </div>
         </div>
       </div>

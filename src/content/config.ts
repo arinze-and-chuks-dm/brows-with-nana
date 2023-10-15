@@ -8,6 +8,7 @@ const pagesCollection = defineCollection({
     subtitle: z.string().optional(),
     meta_title: z.string().optional(),
     description: z.string().optional(),
+    noindex: z.boolean().optional(),
     image: z.object({
       src: image().refine((img ) => img.width >= 600, {
         message: "Image must be at least 600px wide",

@@ -1,10 +1,9 @@
 ---
 
-import arrowRight from '@assets/icons/arrow-right.svg'
 import vid1 from '@assets/videos/vid-1.mp4'
 import vid2 from '@assets/videos/vid-2.mp4'
 import vid3 from '@assets/videos/vid-3.mp4'
-import { contact_info } from "@config/config.json"
+import CTA from '@components/CTA.astro'
 const testimonials = [
   {
     name: 'Lara R',
@@ -56,8 +55,5 @@ const testimonials = [
       ))
     }
   </ul>
-  <a  role="button" href={contact_info.google_maps} target="_blank" rel="nofollow" class="group btn-dark border-0 inline-flex justify-center relative items-center">
-    <span class="transform transition ease-in-out group-hover:-translate-x-5">Book Now</span>
-        <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-</a>
+  <CTA />
 </section>

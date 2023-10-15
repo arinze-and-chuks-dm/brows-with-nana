@@ -15,7 +15,14 @@ export default defineConfig({
     domains: ["astro.build"],
   },
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: page => ![
+        `${config.site.base_url}/404.html`,
+        `${config.site.base_url}/read-before-booking`,
+        `${config.site.base_url}/thank-you`,
+        `${config.site.base_url}/policy-and-guidelines`
+      ].includes(page.path),
+    }),
     tailwind({
       config: {
         applyBaseStyles: false,

@@ -6,6 +6,7 @@ import email from '@assets/icons/email.svg'
 import locationIcon from '@assets/icons/location-pin-dark.svg'
 import contactImg from '@assets/images/contact-img.jpg'
 import Header from '@components/Header.astro'
+import LinkButton from '@components/LinkButton.astro'
 import config from '@config/config.json'
 import { markdownify } from '@lib/utils/textConverter'
 import { Image } from 'astro:assets'
@@ -18,10 +19,10 @@ const data =  [
 
 ---
 
-<Base title={'Contact'} image={contactImg} >
+<Base title={'Contact Us | BrowsWithNana'} description='Get in touch with the experts at BrowsWithNana' image={contactImg} >
   <Header />
     <Image src={contactImg} alt={'client getting her eye brows microbladed'} />
-  <section class="section grid col-span-1 lg:grid-cols-2 gap-10">
+  <main class="section grid col-span-1 lg:grid-cols-2 gap-10">
 
     <div class=" space-y-10"> 
       <h3 class="text-5xl lg:text-6xl">Visit us @ <span set:html={markdownify(contact_info.city)} /> </h3>
@@ -44,11 +45,7 @@ const data =  [
         ))}
     </ul>
     </div>
-    
-      <a role="button" href={contact_info.google_maps} target="_blank" rel="nofollow"  class="group btn inline-flex relative justify-center items-center">
-          <span class="transform transition ease-in-out group-hover:-translate-x-5">View on map</span>
-          <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
-      </a>
+      <LinkButton href={contact_info.google_maps} text='View on map' external />
     </div>
 
     <form method="POST" action={`https://formsubmit.co/${contact_info.email}`}  class=" border-2 border-primary rounded-lg p-3 md:p-12 space-y-5 ">
@@ -74,5 +71,5 @@ const data =  [
             <img class="transform transition ease-in-out right-5 invisible absolute  group-hover:-translate-x-5 group-hover:opacity-100 group-hover:visible" src={arrowRight.src} alt={''}  />
         </button>
     </form>
-  </section>
+  </main>
 </Base>
